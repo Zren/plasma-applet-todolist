@@ -12,7 +12,9 @@ ListView {
     cacheBuffer: 10000000
     // interactive: false
     spacing: 4
-    verticalLayoutDirection: plasmoid.location == PlasmaCore.Types.TopEdge ? ListView.BottomToTop : ListView.TopToBottom
+
+    // BottomToTop feels weird, so disable this for now.
+    // verticalLayoutDirection: plasmoid.location == PlasmaCore.Types.BottomEdge ? ListView.BottomToTop : ListView.TopToBottom
 
     delegate: TodoItemDelegate {}
     
