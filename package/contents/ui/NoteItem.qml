@@ -321,8 +321,10 @@ Item {
             onLabelChanged: noteItem.deboucedSaveNote()
 
             function setData(sectionData) {
-                label = sectionData.label
-                model.setData(sectionData.items)
+                if (sectionData) {
+                    label = sectionData.label
+                    model.setData(sectionData.items)
+                }
             }
 
             property alias model: model
