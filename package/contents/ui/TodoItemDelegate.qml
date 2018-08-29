@@ -128,7 +128,7 @@ MouseArea {
         PlasmaComponents.CheckBox {
         // PlasmaFlatStyle.CheckBoxOnly {
             id: checkbox
-            anchors.top: parent.top
+            Layout.alignment: Qt.AlignTop
             Layout.preferredHeight: 30 * units.devicePixelRatio
             Layout.preferredWidth: 30 * units.devicePixelRatio
             checked: todoItemDelegate.isCompleted
@@ -141,7 +141,7 @@ MouseArea {
         }
         Item {
             Layout.fillWidth: true
-            anchors.top: parent.top
+            Layout.alignment: Qt.AlignTop
 
             
             TextArea {
@@ -282,7 +282,7 @@ MouseArea {
 
         PlasmaComponents.ToolButton {
             id: removeButton
-            anchors.top: parent.top
+            Layout.alignment: Qt.AlignTop
             visible: !plasmoid.configuration.deleteOnComplete
             Layout.preferredWidth: checkbox.height
             Layout.preferredHeight: checkbox.height
