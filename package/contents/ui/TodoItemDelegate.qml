@@ -129,8 +129,9 @@ MouseArea {
         // PlasmaFlatStyle.CheckBoxOnly {
             id: checkbox
             Layout.alignment: Qt.AlignTop
-            Layout.preferredHeight: 30 * units.devicePixelRatio
-            Layout.preferredWidth: 30 * units.devicePixelRatio
+            property int size: 30 * units.devicePixelRatio
+            Layout.minimumWidth: size
+            Layout.minimumHeight: size
             checked: todoItemDelegate.isCompleted
 
             onClicked: setComplete(checked)
