@@ -248,22 +248,6 @@ Item {
         return out;
     }
 
-    // property string noteLabel: ''
-    // onNoteLabelChanged: {
-    //     noteItem.deboucedSaveNote()
-    // }
-
-    // public
-    // property alias todoModel: todoModel
-
-    // TodoModel {
-    //     id: todoModel
-    //     onUpdate: {
-    //         todoModel.updateVisibleItems()
-    //         noteItem.deboucedSaveNote()
-    //     }
-    // }
-
     property int incompleteCount: 0
     function updateIncompleteCount() {
         var n = 0
