@@ -41,31 +41,6 @@ FocusScope {
 
     property bool isDesktopContainment: false
 
-    // MouseArea {
-    //     id: mouseArea
-    //     anchors.fill: parent
-    //     hoverEnabled: true
-    // }
-    // Rectangle {
-    //  anchors.fill: parent
-    //  color: "#000"
-    //  opacity: mouseArea.containsMouse ? 0.25 : 0
-    //  Behavior on opacity {
-    //      NumberAnimation { duration: 400 }
-    //  }
-    // }
-
-    Component.onCompleted: {
-        // console.log('Floating', PlasmaCore.Types.Floating)
-        // console.log('Desktop', PlasmaCore.Types.Desktop)
-        // console.log('containmentType', plasmoid.containmentType)
-        // console.log('location', plasmoid.location)
-        if (typeof parent === 'undefined') {
-            width = Layout.preferredWidth
-            height = Layout.preferredHeight
-        }
-    }
-
     RowLayout {
         id: notesRow
         anchors.fill: parent
