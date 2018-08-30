@@ -1,3 +1,11 @@
+## v8 - August 30 2018
+
+* Make sure there's enough room for each section. Fixes a infinite loop when trying to resize the desktop widget with 2+ lists.
+* Add Ctrl+Return and Alt+Return shortcut to toggle item as complete (by @mcorteel).
+* Fix sectionData is undefined warning when loading, which broke the issue count in the panel (Issue #4).
+* Don't align list items to bottom of popup when in a top panel (Issue #6).
+* Fix textbox overlapping checkbox when using 1x DPI and 20px font size (instead of 10px).
+
 ## v7 - August 3 2017
 
 * Support multiple lists side by side. Each list is seperated by a heading in the file.
