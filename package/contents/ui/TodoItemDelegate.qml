@@ -296,5 +296,5 @@ MouseArea {
         }
     }
 
-    Component.onCompleted: console.log('TodoItemDelegate', Date.now())
+    // Component.onCompleted: console.log('TodoItemDelegate', Date.now())
 }
