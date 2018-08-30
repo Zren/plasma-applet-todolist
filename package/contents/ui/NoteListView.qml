@@ -11,7 +11,7 @@ ListView {
 
     cacheBuffer: 10000000
     // interactive: false
-    spacing: 4
+    spacing: 4 * units.devicePixelRatio
 
     // BottomToTop feels weird, so disable this for now.
     // verticalLayoutDirection: plasmoid.location == PlasmaCore.Types.BottomEdge ? ListView.BottomToTop : ListView.TopToBottom
