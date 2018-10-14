@@ -12,6 +12,9 @@
     <entry name="deleteOnComplete" type="Bool">
       <default>true</default>
     </entry>
+    <entry name="hidden" type="Bool">
+      <default>false</default>
+    </entry>
   </group>
 
 </kcfg>

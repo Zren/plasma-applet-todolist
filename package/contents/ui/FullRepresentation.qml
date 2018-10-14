@@ -45,6 +45,13 @@ FocusScope {
         id: notesRow
         anchors.fill: parent
 
+        opacity: plasmoid.configuration.hidden ? 0 : 1
+        visible: opacity > 0
+
+        Behavior on opacity {
+            NumberAnimation { duration: 400 }
+        }
+
         Repeater {
             id: notesRepeater
             model: noteItem.numSections

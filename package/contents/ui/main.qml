@@ -95,6 +95,10 @@ Item {
         plasmoid.configuration.deleteOnComplete = !plasmoid.configuration.deleteOnComplete
     }
 
+    function action_toggleHidden() {
+        plasmoid.configuration.hidden = !plasmoid.configuration.hidden
+    }
+
 
     function updateContextMenuCheckmark(actionName, value) {
         // Use "NOICON" since `"" == false`
@@ -106,17 +110,24 @@ Item {
 
     function updateContextMenu() {
         updateContextMenuCheckmark("toggleDeleteOnComplete", plasmoid.configuration.deleteOnComplete)
+        updateContextMenuCheckmark("toggleHidden", plasmoid.configuration.hidden)
+        if (plasmoid.location != PlasmaCore.Types.Floating) {
+            // not desktop component
+            plasmoid.action("toggleHidden").visible = false
+        }
     }
 
     Connections {
         target: plasmoid.configuration
         onDeleteOnCompleteChanged: updateContextMenu()
+        onHiddenChanged: updateContextMenu()
     }
 
     Component.onCompleted: {
         plasmoid.setAction("openInTextEditor", i18n("Open in Text Editor"), "accessories-text-editor");
         plasmoid.setAction("addSection", i18n("Add List"), "list-add");
         plasmoid.setAction("toggleDeleteOnComplete", i18n("Delete on Complete"), "checkmark");
+        plasmoid.setAction("toggleHidden", i18n("Hide"), "checkmark");
         // plasmoid.setAction("deleteCompleted", i18n("Delete All Completed"), "trash-empty");
         console.log('main.isDesktopContainment', plasmoid.location == PlasmaCore.Types.Desktop)
         updateContextMenu()
