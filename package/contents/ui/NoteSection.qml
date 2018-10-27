@@ -102,7 +102,8 @@ ColumnLayout {
 
         PlasmaComponents.ToolButton {
             anchors.right: labelRow.right
-            anchors.rightMargin: index == notesRepeater.count-1 ? pinButton.width : 0
+            readonly property bool isRightMostSection: index == notesRepeater.count-1
+            anchors.rightMargin: isRightMostSection && pinButton.visible ? pinButton.width : 0
             // anchors.top: labelRow.top
             // anchors.bottom: labelRow.bottom
             anchors.verticalCenter: labelRow.verticalCenter
