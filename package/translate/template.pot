@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist \n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applets/tree/master/todolist\n"
-"POT-Creation-Date: 2018-08-29 16:09-0400\n"
+"POT-Creation-Date: 2018-12-03 18:47-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,30 +21,54 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml:15
+#: ../contents/ui/config/ConfigGeneral.qml:16
 msgid "Delete On Complete"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:22
+msgid "Desktop Widget: Hide"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:27
+msgid "Desktop Widget: Show background"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:34
+msgid "List Title Style"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:42
+msgid "Bold"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:47
+msgid "Show outline"
 msgstr ""
 
 #: ../contents/ui/lib/AppletVersion.qml:41
 msgid "<b>Version:</b> %1"
 msgstr ""
 
-#: ../contents/ui/main.qml:117
+#: ../contents/ui/main.qml:127
 msgid "Open in Text Editor"
 msgstr ""
 
-#: ../contents/ui/main.qml:118
+#: ../contents/ui/main.qml:128
 msgid "Add List"
 msgstr ""
 
-#: ../contents/ui/main.qml:119
+#: ../contents/ui/main.qml:129
 msgid "Delete on Complete"
 msgstr ""
 
-#: ../contents/ui/NoteSection.qml:128
+#: ../contents/ui/main.qml:130
+msgid "Hide"
+msgstr ""
+
+#: ../contents/ui/NoteSection.qml:144
 msgid "Delete List"
 msgstr ""
 
-#: ../contents/ui/NoteSection.qml:130
+#: ../contents/ui/NoteSection.qml:146
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
 msgstr ""
