@@ -1,3 +1,10 @@
+## v9 - December 3 2018
+
+* Add toggle for the desktop widget background to add it back.
+* The list title is now bold with an outline using the background color. There is a toggle for the outline and boldness in the config.
+* Add ability to temporily hide the list in case the user does not it visible but doesn't want to go through the hassle of removing and adding it back.
+* Remove the list title right margin when used as a desktop widget which is only needed for leaving room for the pin button in a panel widget's popup.
+
 ## v8 - August 30 2018
 
 * Make sure there's enough room for each section. Fixes a infinite loop when trying to resize the desktop widget with 2+ lists.
