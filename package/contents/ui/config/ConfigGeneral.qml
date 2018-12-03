@@ -22,5 +22,10 @@ ConfigPage {
             text: i18n("Desktop Widget: Hide")
         }
 
+        ConfigCheckBox {
+            configKey: "showBackground"
+            text: i18n("Desktop Widget: Show background")
+        }
+
     }
 }

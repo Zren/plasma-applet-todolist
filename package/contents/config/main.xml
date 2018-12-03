@@ -15,6 +15,9 @@
     <entry name="hidden" type="Bool">
       <default>false</default>
     </entry>
+    <entry name="showBackground" type="bool">
+      <default>false</default>
+    </entry>
   </group>
 
 </kcfg>

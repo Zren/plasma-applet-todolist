@@ -59,7 +59,7 @@ Item {
     }
 
     Plasmoid.fullRepresentation: FullRepresentation {
-        Plasmoid.backgroundHints: isDesktopContainment ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
+        Plasmoid.backgroundHints: isDesktopContainment && !plasmoid.configuration.showBackground ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
         isDesktopContainment: plasmoid.location == PlasmaCore.Types.Floating
 
         // Connections {
