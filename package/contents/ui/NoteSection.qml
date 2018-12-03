@@ -83,6 +83,7 @@ ColumnLayout {
                     id: style
                     font.pointSize: -1
                     font.pixelSize: pinButton.height
+                    font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
                     background: Item {}
                     textColor: theme.textColor
                     placeholderTextColor: "#777"
@@ -96,6 +97,20 @@ ColumnLayout {
                 onEditingFinished: {
                     noteSection.label = text
                     text = Qt.binding(function() { return noteSection.label })
+                }
+
+                Text {
+                    id: textOutline
+                    anchors.fill: parent
+                    visible: plasmoid.configuration.listTitleOutline
+                    text: parent.text
+                    font.pointSize: -1
+                    font.pixelSize: pinButton.height
+                    font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+                    color: "transparent"
+                    style: Text.Outline
+                    styleColor: theme.backgroundColor
+                    verticalAlignment: Text.AlignVCenter
                 }
             }
         }

@@ -28,4 +28,24 @@ ConfigPage {
         }
 
     }
+
+    ConfigSection {
+        Label {
+            text: i18n("List Title Style")
+            font.weight: Font.Bold
+            font.pointSize: theme.defaultFont.pointSize * 1.25
+        }
+        
+
+        ConfigCheckBox {
+            configKey: "listTitleBold"
+            text: i18n("Bold")
+        }
+
+        ConfigCheckBox {
+            configKey: "listTitleOutline"
+            text: i18n("Show outline")
+        }
+
+    }
 }
