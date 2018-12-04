@@ -45,7 +45,7 @@ Item {
         PlasmaCore.IconItem {
             id: icon
             anchors.fill: parent
-            source: 'view-list-symbolic'
+            source: plasmoid.icon
         }
             
         IconCounterOverlay {
