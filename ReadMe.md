@@ -2,7 +2,7 @@
 
 https://store.kde.org/p/1152230/
 
-Extension of the kdeplasma-applets notes widget, where it's organized as a list.
+Redesigned GUI for the [kdeplasma-addons notes widget](https://github.com/KDE/kdeplasma-addons/tree/master/applets/notes), where it's organized as a list using GUI components.
 
 ## Screenshots
 
