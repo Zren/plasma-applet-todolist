@@ -54,6 +54,7 @@ ColumnLayout {
             id: labelRow
             anchors.left: parent.left
             anchors.right: parent.right
+            spacing: 0
             
             property int dragSectionIndex: index
 
