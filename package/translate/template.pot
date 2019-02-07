@@ -1,5 +1,5 @@
 # Translation of todolist in LANGUAGE
-# Copyright (C) 2018
+# Copyright (C) 2019
 # This file is distributed under the same license as the todolist package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: todolist \n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applets/tree/master/todolist\n"
-"POT-Creation-Date: 2018-12-03 18:47-0500\n"
+"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
+"POT-Creation-Date: 2019-02-07 09:35-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,10 +38,14 @@ msgid "List Title Style"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml:42
-msgid "Bold"
+msgid "Show text field background"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml:47
+msgid "Bold"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:53
 msgid "Show outline"
 msgstr ""
 
@@ -65,10 +69,10 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: ../contents/ui/NoteSection.qml:144
+#: ../contents/ui/NoteSection.qml:159
 msgid "Delete List"
 msgstr ""
 
-#: ../contents/ui/NoteSection.qml:146
+#: ../contents/ui/NoteSection.qml:161
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
 msgstr ""
