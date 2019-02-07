@@ -24,6 +24,9 @@
     <entry name="listTitleOutline" type="bool">
       <default>true</default>
     </entry>
+    <entry name="listTitlePlasmaStyle" type="bool">
+      <default>false</default>
+    </entry>
   </group>
 
 </kcfg>

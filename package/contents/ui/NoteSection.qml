@@ -80,20 +80,34 @@ ColumnLayout {
                 Layout.fillWidth: true
                 text: noteSection.label
 
-                style: TextFieldStyle {
-                    id: style
-                    font.pointSize: -1
-                    font.pixelSize: pinButton.height
-                    font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
-                    background: Item {}
-                    textColor: theme.textColor
-                    placeholderTextColor: "#777"
+                Component {
+                    id: transparentTextFieldStyle
+                    PlasmaStyles.TextFieldStyle {
+                        font.pointSize: -1
+                        font.pixelSize: pinButton.height
+                        font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+                        background: Item {}
+                        textColor: theme.textColor
+                        placeholderTextColor: "#777"
 
-                    padding.top: 0
-                    padding.bottom: 0
-                    padding.left: 0
-                    padding.right: 0
+                        padding.top: 0
+                        padding.bottom: 0
+                        padding.left: 0
+                        padding.right: 0
+                    }
                 }
+
+                Component {
+                    id: plasmaTextFieldStyle
+                    PlasmaStyles.TextFieldStyle {
+                        font.pointSize: -1
+                        font.pixelSize: pinButton.height
+                        font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+                    }
+                }
+
+                readonly property bool usingPlasmaStyle: plasmoid.configuration.listTitlePlasmaStyle
+                style: usingPlasmaStyle ? plasmaTextFieldStyle : transparentTextFieldStyle
 
                 onEditingFinished: {
                     noteSection.label = text
@@ -103,7 +117,7 @@ ColumnLayout {
                 Text {
                     id: textOutline
                     anchors.fill: parent
-                    visible: plasmoid.configuration.listTitleOutline
+                    visible: !textField.usingPlasmaStyle && plasmoid.configuration.listTitleOutline
                     text: parent.text
                     font.pointSize: -1
                     font.pixelSize: pinButton.height

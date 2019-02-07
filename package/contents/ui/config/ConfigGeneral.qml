@@ -35,7 +35,12 @@ ConfigPage {
             font.weight: Font.Bold
             font.pointSize: theme.defaultFont.pointSize * 1.25
         }
-        
+
+        ConfigCheckBox {
+            id: listTitlePlasmaStyle
+            configKey: "listTitlePlasmaStyle"
+            text: i18n("Show text field background")
+        }
 
         ConfigCheckBox {
             configKey: "listTitleBold"
@@ -43,6 +48,7 @@ ConfigPage {
         }
 
         ConfigCheckBox {
+            enabled: !listTitlePlasmaStyle.checked
             configKey: "listTitleOutline"
             text: i18n("Show outline")
         }
