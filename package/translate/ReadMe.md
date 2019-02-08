@@ -35,4 +35,4 @@ Or if you know how to make a pull request
 |  Locale  |  Lines  | % Done|
 |----------|---------|-------|
 | Template |      15 |       |
-| nl_NL    |   15/15 |   100% |
+| nl_NL    |   15/15 |  100% |
