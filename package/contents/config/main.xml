@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
-      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
-  <kcfgfile name=""/>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+	<kcfgfile name=""/>
 
-  <group name="General">
-    <entry name="showCompletedItems" type="Bool">
-      <default>false</default>
-    </entry>
-    <entry name="deleteOnComplete" type="Bool">
-      <default>true</default>
-    </entry>
-    <entry name="hidden" type="Bool">
-      <default>false</default>
-    </entry>
-    <entry name="showBackground" type="bool">
-      <default>false</default>
-    </entry>
-    <entry name="listTitleBold" type="bool">
-      <default>true</default>
-    </entry>
-    <entry name="listTitleOutline" type="bool">
-      <default>true</default>
-    </entry>
-    <entry name="listTitlePlasmaStyle" type="bool">
-      <default>false</default>
-    </entry>
-  </group>
+	<group name="General">
+		<entry name="showCompletedItems" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="deleteOnComplete" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="hidden" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="showBackground" type="bool">
+			<default>false</default>
+		</entry>
+		<entry name="listTitleBold" type="bool">
+			<default>true</default>
+		</entry>
+		<entry name="listTitleOutline" type="bool">
+			<default>true</default>
+		</entry>
+		<entry name="listTitlePlasmaStyle" type="bool">
+			<default>false</default>
+		</entry>
+	</group>
 
 </kcfg>
 
