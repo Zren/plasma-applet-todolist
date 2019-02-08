@@ -1,12 +1,12 @@
 import QtQuick 2.0
 
-import org.kde.plasma.private.notes 0.1
+import org.kde.plasma.private.notes 0.1 as NotesWidget
 
 Item {
 	id: noteItem
 
 	property string noteId: 'todolist'
-	NoteManager { id: noteManager }
+	NotesWidget.NoteManager { id: noteManager }
 	property QtObject note: noteManager.loadNote(noteId)
 	property bool deserializeOnFileChange: true
 	property bool saveOnChange: true
