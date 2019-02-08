@@ -25,76 +25,76 @@ import QtQuick 2.4
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
-    id: overlay
-    readonly property int iconWidthDelta: (icon.width - icon.paintedWidth) / 2
-    property alias text: badgeLabel.text
-    property color backgroundColor: theme.highlightColor
-    property color textColor: theme.backgroundColor
-    property real heightRatio: 0.4
+	id: overlay
+	readonly property int iconWidthDelta: (icon.width - icon.paintedWidth) / 2
+	property alias text: badgeLabel.text
+	property color backgroundColor: theme.highlightColor
+	property color textColor: theme.backgroundColor
+	property real heightRatio: 0.4
 
-    Item {
-        id: badgeMask
-        anchors.fill: parent
+	Item {
+		id: badgeMask
+		anchors.fill: parent
 
-        Rectangle {
-            readonly property int offset: Math.round(Math.max(units.smallSpacing / 2, badgeMask.width / 32))
-            x: Qt.application.layoutDirection === Qt.RightToLeft ? -offset + iconWidthDelta : parent.width - width + offset - iconWidthDelta
-            y: -offset
-            width: badgeRect.width + offset * 2
-            height: badgeRect.height + offset * 2
-            radius: width
-        }
-    }
+		Rectangle {
+			readonly property int offset: Math.round(Math.max(units.smallSpacing / 2, badgeMask.width / 32))
+			x: Qt.application.layoutDirection === Qt.RightToLeft ? -offset + iconWidthDelta : parent.width - width + offset - iconWidthDelta
+			y: -offset
+			width: badgeRect.width + offset * 2
+			height: badgeRect.height + offset * 2
+			radius: width
+		}
+	}
 
-    ShaderEffect {
-        anchors.fill: parent
-        property var source: ShaderEffectSource {
-            sourceItem: icon
-            hideSource: overlay.visible
-        }
-        property var mask: ShaderEffectSource {
-            sourceItem: badgeMask
-            hideSource: true
-            live: false
-        }
+	ShaderEffect {
+		anchors.fill: parent
+		property var source: ShaderEffectSource {
+			sourceItem: icon
+			hideSource: overlay.visible
+		}
+		property var mask: ShaderEffectSource {
+			sourceItem: badgeMask
+			hideSource: true
+			live: false
+		}
 
-        onWidthChanged: mask.scheduleUpdate()
-        onHeightChanged: mask.scheduleUpdate()
+		onWidthChanged: mask.scheduleUpdate()
+		onHeightChanged: mask.scheduleUpdate()
 
-        supportsAtlasTextures: true
+		supportsAtlasTextures: true
 
-        fragmentShader: "
-            varying highp vec2 qt_TexCoord0;
-            uniform highp float qt_Opacity;
-            uniform lowp sampler2D source;
-            uniform lowp sampler2D mask;
-            void main() {
-                gl_FragColor = texture2D(source, qt_TexCoord0.st) * (1.0 - (texture2D(mask, qt_TexCoord0.st).a)) * qt_Opacity;
-            }
-        "
-    }
+		fragmentShader: "
+			varying highp vec2 qt_TexCoord0;
+			uniform highp float qt_Opacity;
+			uniform lowp sampler2D source;
+			uniform lowp sampler2D mask;
+			void main() {
+				gl_FragColor = texture2D(source, qt_TexCoord0.st) * (1.0 - (texture2D(mask, qt_TexCoord0.st).a)) * qt_Opacity;
+			}
+		"
+	}
 
-    Rectangle {
-        id: badgeRect
-        x: Qt.application.layoutDirection === Qt.RightToLeft ? iconWidthDelta : parent.width - width - iconWidthDelta
-        width: height
-        height: Math.round(parent.height * overlay.heightRatio)
-        color: overlay.backgroundColor
-        radius: width
+	Rectangle {
+		id: badgeRect
+		x: Qt.application.layoutDirection === Qt.RightToLeft ? iconWidthDelta : parent.width - width - iconWidthDelta
+		width: height
+		height: Math.round(parent.height * overlay.heightRatio)
+		color: overlay.backgroundColor
+		radius: width
 
-        PlasmaComponents.Label {
-            id: badgeLabel
-            anchors.centerIn: parent
-            width: height
-            height: Math.round(parent.height)
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            fontSizeMode: Text.Fit
-            font.pointSize: -1
-            font.pixelSize: 1024
-            minimumPixelSize: 5
-            color: overlay.textColor
-            font.weight: Font.Black
-        }
-    }
+		PlasmaComponents.Label {
+			id: badgeLabel
+			anchors.centerIn: parent
+			width: height
+			height: Math.round(parent.height)
+			horizontalAlignment: Text.AlignHCenter
+			verticalAlignment: Text.AlignVCenter
+			fontSizeMode: Text.Fit
+			font.pointSize: -1
+			font.pixelSize: 1024
+			minimumPixelSize: 5
+			color: overlay.textColor
+			font.weight: Font.Black
+		}
+	}
 }
