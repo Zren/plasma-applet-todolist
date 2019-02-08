@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2019-02-07 09:35-0500\n"
+"POT-Creation-Date: 2019-02-08 14:40-0500\n"
 "PO-Revision-Date: 2019-02-07 21:52+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -70,10 +70,10 @@ msgstr "Taak wissen na afronden"
 msgid "Hide"
 msgstr "Verbergen"
 
-#: ../contents/ui/NoteSection.qml:159
+#: ../contents/ui/NoteSection.qml:156
 msgid "Delete List"
 msgstr "Lijst verwijderen"
 
-#: ../contents/ui/NoteSection.qml:161
+#: ../contents/ui/NoteSection.qml:158
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
 msgstr "Weet je zeker dat je de lijst \"%1\", met daarop %2 items, wilt verwijderen?"
