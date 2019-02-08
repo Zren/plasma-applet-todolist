@@ -1,3 +1,8 @@
+## v10 - February 8 2019
+
+* Add Dutch translations by @Vistaus (Pull Request #8 and #12)
+* Add toggle show showing the text field background for the list title (Issue #11)
+
 ## v9 - December 3 2018
 
 * Add toggle for the desktop widget background to add it back.
