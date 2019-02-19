@@ -5,7 +5,21 @@ import org.kde.plasma.private.notes 0.1 as NotesWidget
 Item {
 	id: noteItem
 
-	property string noteId: 'todolist'
+	readonly property string noteId: {
+		if (plasmoid.configuration.useGlobalNote) {
+			return 'todolist'
+		} else { // instanceNoteId
+			return 'todolist_' + plasmoid.id
+		}
+	}
+	onNoteIdChanged: {
+		console.log('[todolist] onNoteIdChanged', noteId)
+		if (noteItem.note.id != noteId) {
+			noteItem.note = noteManager.loadNote(noteId)
+		}
+		plasmoid.configuration.noteId = noteId
+	}
+
 	NotesWidget.NoteManager { id: noteManager }
 	property QtObject note: noteManager.loadNote(noteId)
 	property bool deserializeOnFileChange: true
