@@ -129,7 +129,6 @@ Item {
 		plasmoid.setAction("toggleDeleteOnComplete", i18n("Delete on Complete"), "checkmark")
 		plasmoid.setAction("toggleHidden", i18n("Hide"), "checkmark")
 		// plasmoid.setAction("deleteCompleted", i18n("Delete All Completed"), "trash-empty")
-		console.log('main.isDesktopContainment', plasmoid.location == PlasmaCore.Types.Desktop)
 		updateContextMenu()
 	}
 }
