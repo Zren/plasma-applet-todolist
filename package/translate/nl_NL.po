@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2019-02-08 14:40-0500\n"
+"POT-Creation-Date: 2019-03-13 19:33-0400\n"
 "PO-Revision-Date: 2019-02-07 21:52+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -22,31 +22,43 @@ msgstr ""
 msgid "General"
 msgstr "Algemeen"
 
-#: ../contents/ui/config/ConfigGeneral.qml:16
-msgid "Delete On Complete"
-msgstr "Taak wissen na afronden"
-
-#: ../contents/ui/config/ConfigGeneral.qml:22
+#: ../contents/ui/config/ConfigGeneral.qml:17
 msgid "Desktop Widget: Hide"
 msgstr "Bureaubladwidget: verbergen"
 
-#: ../contents/ui/config/ConfigGeneral.qml:27
+#: ../contents/ui/config/ConfigGeneral.qml:22
 msgid "Desktop Widget: Show background"
 msgstr "Bureaubladwidget: achtergrond tonen"
 
-#: ../contents/ui/config/ConfigGeneral.qml:34
+#: ../contents/ui/config/ConfigGeneral.qml:28
+msgid "Completed Items"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:35
+msgid "Delete On Complete"
+msgstr "Taak wissen na afronden"
+
+#: ../contents/ui/config/ConfigGeneral.qml:40
+msgid "Strikeout"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:45
+msgid "Faded"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:51
 msgid "List Title Style"
 msgstr "Stijl van lijsttitel"
 
-#: ../contents/ui/config/ConfigGeneral.qml:42
+#: ../contents/ui/config/ConfigGeneral.qml:59
 msgid "Show text field background"
 msgstr "Achtergrond in tekstveld tonen"
 
-#: ../contents/ui/config/ConfigGeneral.qml:47
+#: ../contents/ui/config/ConfigGeneral.qml:64
 msgid "Bold"
 msgstr "Vetgedrukt"
 
-#: ../contents/ui/config/ConfigGeneral.qml:53
+#: ../contents/ui/config/ConfigGeneral.qml:70
 msgid "Show outline"
 msgstr "Omlijning tonen"
 

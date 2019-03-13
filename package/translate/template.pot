@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist \n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2019-02-08 14:40-0500\n"
+"POT-Creation-Date: 2019-03-13 19:33-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,31 +21,43 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml:16
-msgid "Delete On Complete"
-msgstr ""
-
-#: ../contents/ui/config/ConfigGeneral.qml:22
+#: ../contents/ui/config/ConfigGeneral.qml:17
 msgid "Desktop Widget: Hide"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml:27
+#: ../contents/ui/config/ConfigGeneral.qml:22
 msgid "Desktop Widget: Show background"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml:34
+#: ../contents/ui/config/ConfigGeneral.qml:28
+msgid "Completed Items"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:35
+msgid "Delete On Complete"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:40
+msgid "Strikeout"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:45
+msgid "Faded"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml:51
 msgid "List Title Style"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml:42
+#: ../contents/ui/config/ConfigGeneral.qml:59
 msgid "Show text field background"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml:47
+#: ../contents/ui/config/ConfigGeneral.qml:64
 msgid "Bold"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml:53
+#: ../contents/ui/config/ConfigGeneral.qml:70
 msgid "Show outline"
 msgstr ""
 
