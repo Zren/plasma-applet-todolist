@@ -245,7 +245,17 @@ MouseArea {
 
 				font.strikeout: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.strikeoutCompleted
 
+				readonly property bool shouldFade: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.fadeCompleted
+				opacity: shouldFade ? 0.6 : 1
+
 				style: PlasmaStyles.TextAreaStyle {}
+
+				// style: PlasmaStyles.TextAreaStyle {
+				// 	readonly property var control: textArea
+				// 	readonly property color defaultTextColor: control.backgroundVisible ? theme.viewTextColor : PlasmaCore.ColorScope.textColor
+				// 	readonly property color fadedTextColor: Qt.rgba(defaultTextColor.r, defaultTextColor.g, defaultTextColor.b, 0.6)
+				// 	textColor: textArea.shouldFade ? fadedTextColor : defaultTextColor
+				// }
 
 				Keys.onPressed: {
 					if (event.key == Qt.Key_Tab) {

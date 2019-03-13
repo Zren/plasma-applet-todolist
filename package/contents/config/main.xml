@@ -33,6 +33,9 @@
 		<entry name="strikeoutCompleted" type="bool">
 			<default>true</default>
 		</entry>
+		<entry name="fadeCompleted" type="bool">
+			<default>true</default>
+		</entry>
 	</group>
 
 </kcfg>

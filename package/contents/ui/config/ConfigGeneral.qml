@@ -39,6 +39,11 @@ ConfigPage {
 			configKey: 'strikeoutCompleted'
 			text: i18n("Strikeout")
 		}
+
+		ConfigCheckBox {
+			configKey: 'fadeCompleted'
+			text: i18n("Faded")
+		}
 	}
 
 	ConfigSection {
