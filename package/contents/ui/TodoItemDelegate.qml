@@ -243,6 +243,8 @@ MouseArea {
 					return out
 				}
 
+				font.strikeout: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.strikeoutCompleted
+
 				style: PlasmaStyles.TextAreaStyle {}
 
 				Keys.onPressed: {

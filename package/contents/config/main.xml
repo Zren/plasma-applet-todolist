@@ -30,6 +30,9 @@
 		<entry name="listTitlePlasmaStyle" type="bool">
 			<default>false</default>
 		</entry>
+		<entry name="strikeoutCompleted" type="bool">
+			<default>true</default>
+		</entry>
 	</group>
 
 </kcfg>

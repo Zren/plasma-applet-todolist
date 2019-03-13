@@ -10,12 +10,6 @@ ConfigPage {
 	showAppletVersion: true
 
 	ConfigSection {
-
-		ConfigCheckBox {
-			configKey: 'deleteOnComplete'
-			text: i18n("Delete On Complete")
-		}
-
 		ConfigCheckBox {
 			visible: plasmoid.location == PlasmaCore.Types.Floating
 			configKey: 'hidden'
@@ -26,7 +20,24 @@ ConfigPage {
 			configKey: "showBackground"
 			text: i18n("Desktop Widget: Show background")
 		}
+	}
 
+	ConfigSection {
+		Label {
+			text: i18n("Completed Items")
+			font.weight: Font.Bold
+			font.pointSize: theme.defaultFont.pointSize * 1.25
+		}
+
+		ConfigCheckBox {
+			configKey: 'deleteOnComplete'
+			text: i18n("Delete On Complete")
+		}
+
+		ConfigCheckBox {
+			configKey: 'strikeoutCompleted'
+			text: i18n("Strikeout")
+		}
 	}
 
 	ConfigSection {
