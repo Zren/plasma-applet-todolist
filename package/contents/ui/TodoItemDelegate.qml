@@ -3,6 +3,7 @@ import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import QtQuick.Controls.Styles.Plasma 2.0 as PlasmaStyles
 import org.kde.draganddrop 2.0 as DragAndDrop
 
@@ -145,6 +146,7 @@ MouseArea {
 			
 			TextArea {
 			// PlasmaFlatStyle.FastTextArea {
+			// PlasmaComponents3.TextArea {
 				id: textArea
 				width: parent.width
 				// Layout.fillHeight: true
