@@ -10,8 +10,9 @@ ConfigPage {
 	showAppletVersion: true
 
 	ConfigSection {
+		visible: plasmoid.location == PlasmaCore.Types.Floating
+
 		ConfigCheckBox {
-			visible: plasmoid.location == PlasmaCore.Types.Floating
 			configKey: 'hidden'
 			text: i18n("Desktop Widget: Hide")
 		}
