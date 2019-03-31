@@ -2,6 +2,7 @@
 
 * Strikeout completed items (optional) when not deleting on complete (Issue #9). Also optionally fade completed items.
 * Hide "Desktop Widget: Show Background" toggle when widget is in the panel.
+* Updated Dutch translations by @Vistaus (Pull Request #15)
 
 ## v10 - February 8 2019
 
