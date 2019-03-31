@@ -13,7 +13,7 @@ Item {
 		}
 	}
 	onNoteIdChanged: {
-		console.log('[todolist] onNoteIdChanged', noteId)
+		// console.log('[todolist] onNoteIdChanged', noteId)
 		if (noteItem.note.id != noteId) {
 			noteItem.note = noteManager.loadNote(noteId)
 		}
