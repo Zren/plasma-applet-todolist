@@ -3,7 +3,7 @@ import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+// import org.kde.plasma.components 3.0 as PlasmaComponents3
 import QtQuick.Controls.Styles.Plasma 2.0 as PlasmaStyles
 import org.kde.draganddrop 2.0 as DragAndDrop
 
@@ -143,14 +143,14 @@ MouseArea {
 			Layout.fillWidth: true
 			Layout.alignment: Qt.AlignTop
 
-			
+
 			TextArea {
 			// PlasmaFlatStyle.FastTextArea {
 			// PlasmaComponents3.TextArea {
 				id: textArea
 				width: parent.width
 				// Layout.fillHeight: true
-				
+
 				// height: {
 				// 	console.log(leftPadding)
 				// 	return Math.max(leftPadding * 2 + font.pixelSize, implicitHeight)
@@ -230,7 +230,7 @@ MouseArea {
 					out = out.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
 						return '&#' + i.charCodeAt(0) + ';'
 					})
-					
+
 					// Render links
 					var rUrl = /(http|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/gi
 					out = out.replace(rUrl, function(m) {
@@ -290,7 +290,7 @@ MouseArea {
 					}
 				}
 			}
-			
+
 		}
 
 		PlasmaComponents.ToolButton {
