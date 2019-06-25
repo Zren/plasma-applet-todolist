@@ -47,7 +47,7 @@ Item {
 			anchors.fill: parent
 			source: plasmoid.icon
 		}
-			
+
 		IconCounterOverlay {
 			anchors.fill: parent
 			text: noteItem.incompleteCount
@@ -125,7 +125,7 @@ Item {
 
 	Component.onCompleted: {
 		plasmoid.setAction("openInTextEditor", i18n("Open in Text Editor"), "accessories-text-editor")
-		plasmoid.setAction("addSection", i18n("Add List"), "list-add")
+// 		plasmoid.setAction("addSection", i18n("Add List"), "list-add")
 		plasmoid.setAction("toggleDeleteOnComplete", i18n("Delete on Complete"), "checkmark")
 		plasmoid.setAction("toggleHidden", i18n("Hide"), "checkmark")
 		// plasmoid.setAction("deleteCompleted", i18n("Delete All Completed"), "trash-empty")

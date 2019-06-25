@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2019-03-13 19:33-0400\n"
+"POT-Creation-Date: 2019-06-25 19:47+0200\n"
 "PO-Revision-Date: 2019-03-31 17:10+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -70,10 +70,7 @@ msgstr "<b>Versie:</b> %1"
 msgid "Open in Text Editor"
 msgstr "Openen in tekstbewerker"
 
-#: ../contents/ui/main.qml:128
-msgid "Add List"
-msgstr "Lijst toevoegen"
-
+#. i18n("Add List"), "list-add")
 #: ../contents/ui/main.qml:129
 msgid "Delete on Complete"
 msgstr "Taken wissen na afronden"
@@ -89,3 +86,6 @@ msgstr "Lijst verwijderen"
 #: ../contents/ui/NoteSection.qml:158
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
 msgstr "Weet je zeker dat je de lijst \"%1\", met daarop %2 taken, wilt verwijderen?"
+
+#~ msgid "Add List"
+#~ msgstr "Lijst toevoegen"
