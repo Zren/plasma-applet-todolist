@@ -25,6 +25,29 @@ ConfigPage {
 
 	ConfigSection {
 		Label {
+			text: i18n("Note Name")
+			font.weight: Font.Bold
+			font.pointSize: theme.defaultFont.pointSize * 1.25
+		}
+
+		ConfigCheckBox {
+			configKey: 'useGlobalNote'
+			text: i18n("Use Global Note")
+		}
+
+		ConfigCheckBox {
+			configKey: 'useOwnNameNote'
+			text: i18n("Use Own Name for the Note")
+		}
+
+		ConfigTextField {
+			configKey: 'noteName'
+			placeholderText: i18n("Note Name")
+		}
+	}
+
+	ConfigSection {
+		Label {
 			text: i18n("Completed Items")
 			font.weight: Font.Bold
 			font.pointSize: theme.defaultFont.pointSize * 1.25
