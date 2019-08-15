@@ -1,3 +1,6 @@
+## v12 - August 15 2019
+* Add a possibility to change counter appearance: whether it is a big counter, a round counter, whether it appears if no items are left.
+
 ## v11 - March 31 2019
 
 * Strikeout completed items (optional) when not deleting on complete (Issue #9). Also optionally fade completed items.

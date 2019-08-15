@@ -69,6 +69,28 @@ ConfigPage {
 			configKey: "listTitleOutline"
 			text: i18n("Show outline")
 		}
+	}
 
+	ConfigSection {
+		Label {
+			text: i18n("Counter style")
+			font.weight: Font.Bold
+			font.pointSize: theme.defaultFont.pointSize * 1.25
+		}
+
+		ConfigCheckBox {
+			configKey: 'showIfNone'
+			text: i18n("Show counter if no items are left")
+		}
+
+		ConfigCheckBox {
+			configKey: 'bigCounter'
+			text: i18n("Use big counter")
+		}
+
+		ConfigCheckBox {
+			configKey: 'roundCounter'
+			text: i18n("Use round counter")
+		}
 	}
 }
