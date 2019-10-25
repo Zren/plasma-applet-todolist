@@ -88,4 +88,5 @@ msgstr "Lijst verwijderen"
 
 #: ../contents/ui/NoteSection.qml:158
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
-msgstr "Weet je zeker dat je de lijst \"%1\", met daarop %2 taken, wilt verwijderen?"
+msgstr ""
+"Weet je zeker dat je de lijst \"%1\", met daarop %2 taken, wilt verwijderen?"
