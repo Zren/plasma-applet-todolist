@@ -23,7 +23,6 @@ Some awesome users seemed to have packaged this applet under `plasma5-applets-to
 * Enter: Next Item.
 * Up/Down: Select Item.
 * Ctrl+Up/Down: Reorder Item.
-* Number of incomplete items is shown in the panel icon.
 * Alt+Enter or Ctrl+Enter: Toggle complete (deletes it).
 * Tab : Indent the list
-* Shift + Tab : UnIndent the list
+* Shift+Tab : UnIndent the list
