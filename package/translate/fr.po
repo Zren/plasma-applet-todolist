@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2019-03-13 19:33-0400\n"
+"POT-Creation-Date: 2020-05-12 13:44-0400\n"
 "PO-Revision-Date: 2019-08-16 12:47+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,75 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: ../contents/config/config.qml:6
+#: ../contents/config/config.qml
 msgid "General"
 msgstr "Configuration"
 
-#: ../contents/ui/config/ConfigGeneral.qml:17
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Desktop Widget: Hide"
 msgstr "Widget de bureau: Caché"
 
-#: ../contents/ui/config/ConfigGeneral.qml:22
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Desktop Widget: Show background"
 msgstr "Widget de bureau: Afficher l'arrière plan"
 
-#: ../contents/ui/config/ConfigGeneral.qml:28
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Completed Items"
 msgstr "Objets terminés"
 
-#: ../contents/ui/config/ConfigGeneral.qml:35
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Delete On Complete"
 msgstr "Supprimer à la fin"
 
-#: ../contents/ui/config/ConfigGeneral.qml:40
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Strikeout"
 msgstr "Barré"
 
-#: ../contents/ui/config/ConfigGeneral.qml:45
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Faded"
 msgstr "Estomper"
 
-#: ../contents/ui/config/ConfigGeneral.qml:51
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "List Title Style"
 msgstr "Style de la liste de titres"
 
-#: ../contents/ui/config/ConfigGeneral.qml:59
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show text field background"
 msgstr "Afficher le fond des champs de texte"
 
-#: ../contents/ui/config/ConfigGeneral.qml:64
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Bold"
 msgstr "Gras"
 
-#: ../contents/ui/config/ConfigGeneral.qml:70
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show outline"
 msgstr "Afficher"
 
-#: ../contents/ui/lib/AppletVersion.qml:41
+#: ../contents/ui/lib/AppletVersion.qml
 msgid "<b>Version:</b> %1"
 msgstr "<b>Version:</b> %1"
 
-#: ../contents/ui/main.qml:127
+#: ../contents/ui/main.qml
 msgid "Open in Text Editor"
 msgstr "Ouvrir avec l'éditeur de texte"
 
-#: ../contents/ui/main.qml:128
+#: ../contents/ui/main.qml
 msgid "Add List"
 msgstr "Ajouter à la liste"
 
-#: ../contents/ui/main.qml:129
+#: ../contents/ui/main.qml
 msgid "Delete on Complete"
 msgstr "Supprimer à la fin"
 
-#: ../contents/ui/main.qml:130
+#: ../contents/ui/main.qml
 msgid "Hide"
 msgstr "Cacher"
 
-#: ../contents/ui/NoteSection.qml:156
+#: ../contents/ui/NoteSection.qml
 msgid "Delete List"
 msgstr "Liste des suppressions"
 
-#: ../contents/ui/NoteSection.qml:158
+#: ../contents/ui/NoteSection.qml
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
 msgstr ""
 "Êtes-vous sûr(e) de vouloir supprimer la liste \"%1\" contenant %2 objets?"
