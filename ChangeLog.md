@@ -1,3 +1,10 @@
+## v12 - May 12 2020
+
+* Comment out unused import for PlasmaComponents3 (Issue #16) (Pull Request #18 by @eiffel-fl)
+* Update i18n scripts.
+* Add Croatian translations by @VladimirMikulic (Pull Request #22)
+* Add French translations by @gabriel-tessier (Pull Request #21)
+
 ## v11 - March 31 2019
 
 * Strikeout completed items (optional) when not deleting on complete (Issue #9). Also optionally fade completed items.
