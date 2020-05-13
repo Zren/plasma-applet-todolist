@@ -14,7 +14,7 @@ Item {
 	}
 	onNoteIdChanged: {
 		// console.log('[todolist] onNoteIdChanged', noteId)
-		if (noteItem.note.id != noteId) {
+		if (!noteItem.note || noteItem.note.id != noteId) {
 			noteItem.note = noteManager.loadNote(noteId)
 		}
 		plasmoid.configuration.noteId = noteId
