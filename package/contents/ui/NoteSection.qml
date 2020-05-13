@@ -1,10 +1,10 @@
 import QtQuick 2.0
-import QtQuick.Controls 1.1
+import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.2 // MessageDialog
 import QtQuick.Layouts 1.1
 
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import QtQuick.Controls.Styles.Plasma 2.0 as PlasmaStyles
 
@@ -72,46 +72,34 @@ ColumnLayout {
 				}
 			}
 
-			TextField {
+			PlasmaComponents3.TextField {
 				id: textField
 				Layout.fillWidth: true
 				text: noteSection.label
 
-				Component {
-					id: transparentTextFieldStyle
-					PlasmaStyles.TextFieldStyle {
-						font.pointSize: -1
-						font.pixelSize: pinButton.height
-						font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
-						background: Item {}
-						textColor: theme.textColor
-						placeholderTextColor: "#777"
+				// TODO: Use a Loader to re-implement usingPlasmaStyle
+				// readonly property bool usingPlasmaStyle: plasmoid.configuration.listTitlePlasmaStyle
+				readonly property bool usingPlasmaStyle: false
+				// These properties are set for !usingPlasmaStyle.
+				background: Item {}
+				font.pointSize: -1
+				font.pixelSize: pinButton.height
+				font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+				implicitHeight: contentHeight
+				padding: 0
+				leftPadding: 0
+				rightPadding: 0
+				topPadding: 0
+				bottomPadding: 0
+				topInset: 0
 
-						padding.top: 0
-						padding.bottom: 0
-						padding.left: 0
-						padding.right: 0
-					}
-				}
-
-				Component {
-					id: plasmaTextFieldStyle
-					PlasmaStyles.TextFieldStyle {
-						font.pointSize: -1
-						font.pixelSize: pinButton.height
-						font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
-					}
-				}
-
-				readonly property bool usingPlasmaStyle: plasmoid.configuration.listTitlePlasmaStyle
-				style: usingPlasmaStyle ? plasmaTextFieldStyle : transparentTextFieldStyle
 
 				onEditingFinished: {
 					noteSection.label = text
 					text = Qt.binding(function() { return noteSection.label })
 				}
 
-				Text {
+				PlasmaComponents3.Label {
 					id: textOutline
 					anchors.fill: parent
 					visible: !textField.usingPlasmaStyle && plasmoid.configuration.listTitleOutline
@@ -124,18 +112,17 @@ ColumnLayout {
 					styleColor: theme.backgroundColor
 					verticalAlignment: Text.AlignVCenter
 				}
+
 			}
 		}
 
-		PlasmaComponents.ToolButton {
+		PlasmaComponents3.ToolButton {
 			anchors.right: labelRow.right
 			readonly property bool isRightMostSection: index == notesRepeater.count-1
 			anchors.rightMargin: isRightMostSection && pinButton.visible ? pinButton.width : 0
-			// anchors.top: labelRow.top
-			// anchors.bottom: labelRow.bottom
 			anchors.verticalCenter: labelRow.verticalCenter
 			visible: notesRepeater.count > 1 && labelMouseArea.containsMouse && !noteSectionDropArea.containsDrag
-			iconName: "trash-empty"
+			icon.name: "trash-empty"
 			onClicked: promptDeleteLoader.show()
 
 			Loader {

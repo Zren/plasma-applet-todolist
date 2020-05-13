@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Window 2.2
 
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 FocusScope {
 	id: fullRepresentation
@@ -60,14 +60,14 @@ FocusScope {
 
 	}
 
-	PlasmaComponents.ToolButton {
+	PlasmaComponents3.ToolButton {
 		id: pinButton
 		anchors.top: parent.top
 		anchors.right: parent.right
 		width: Math.round(units.gridUnit * 1.25)
 		height: width
 		checkable: true
-		iconSource: "window-pin"
+		icon.name: "window-pin"
 		onCheckedChanged: plasmoid.hideOnWindowDeactivate = !checked
 		visible: !isDesktopContainment
 	}

@@ -1,18 +1,16 @@
 import QtQuick 2.0
-import QtQuick.Controls 1.1
+import QtQuick.Controls 2.3 as QQC2
 import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
-// import org.kde.plasma.components 3.0 as PlasmaComponents3
-import QtQuick.Controls.Styles.Plasma 2.0 as PlasmaStyles
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.draganddrop 2.0 as DragAndDrop
-
-// import "lib/style" as PlasmaFlatStyle
 
 MouseArea {
 	id: todoItemDelegate
 	width: parent.width
-	height: todoItemRow.height
+	// height: todoItemRow.height
+	implicitHeight: todoItemRow.implicitHeight
+	height: implicitHeight
 	hoverEnabled: true
 
 	property var todoModel: listView.model
@@ -90,8 +88,7 @@ MouseArea {
 	RowLayout {
 		id: todoItemRow
 		width: parent.width
-		height: Math.max(checkbox.height, textArea.height)
-		// Component.onCompleted: height = Qt.binding(function() { return Math.max(checkbox.height, textArea.height) })
+		// height: Math.max(checkbox.height, textArea.height)
 		spacing: 0
 
 		Item {
@@ -124,8 +121,7 @@ MouseArea {
 			}
 		}
 
-		PlasmaComponents.CheckBox {
-		// PlasmaFlatStyle.CheckBoxOnly {
+		PlasmaComponents3.CheckBox {
 			id: checkbox
 			Layout.alignment: Qt.AlignTop
 			property int size: 30 * units.devicePixelRatio
@@ -134,31 +130,15 @@ MouseArea {
 			checked: todoItemDelegate.isCompleted
 
 			onClicked: setComplete(checked)
-
-			style: PlasmaStyles.CheckBoxStyle {
-				label: Item {} // Don't scale icon to font height
-			}
 		}
-		Item {
-			Layout.fillWidth: true
-			Layout.alignment: Qt.AlignTop
 
-			
-			TextArea {
-			// PlasmaFlatStyle.FastTextArea {
-			// PlasmaComponents3.TextArea {
+			PlasmaComponents3.TextArea {
 				id: textArea
-				width: parent.width
-				// Layout.fillHeight: true
-				
-				// height: {
-				// 	console.log(leftPadding)
-				// 	return Math.max(leftPadding * 2 + font.pixelSize, implicitHeight)
-				// }
-				// autoSize: true
+				Layout.fillWidth: true
+				Layout.alignment: Qt.AlignTop
 
-				menu: null
-				tabChangesFocus: false
+				textMargin: 0
+
 				focus: todoItemDelegate.ListView.isCurrentItem
 				onActiveFocusChanged: {
 					if (activeFocus) {
@@ -210,15 +190,6 @@ MouseArea {
 					}
 				}
 
-				// backgroundVisible: activeFocus
-				textMargin: 0
-				property int frameWidth: 6
-				height: frameLinesHeight(lineCount)
-
-				function frameLinesHeight(lines) {
-					return contentHeight + 2*textMargin + 2*frameWidth
-				}
-
 				function renderText(text) {
 					// console.log('renderText')
 					if (typeof text === 'undefined') {
@@ -249,15 +220,6 @@ MouseArea {
 
 				readonly property bool shouldFade: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.fadeCompleted
 				opacity: shouldFade ? 0.6 : 1
-
-				style: PlasmaStyles.TextAreaStyle {}
-
-				// style: PlasmaStyles.TextAreaStyle {
-				// 	readonly property var control: textArea
-				// 	readonly property color defaultTextColor: control.backgroundVisible ? theme.viewTextColor : PlasmaCore.ColorScope.textColor
-				// 	readonly property color fadedTextColor: Qt.rgba(defaultTextColor.r, defaultTextColor.g, defaultTextColor.b, 0.6)
-				// 	textColor: textArea.shouldFade ? fadedTextColor : defaultTextColor
-				// }
 
 				Keys.onPressed: {
 					if (event.key == Qt.Key_Tab) {
@@ -292,16 +254,14 @@ MouseArea {
 					}
 				}
 			}
-			
-		}
 
-		PlasmaComponents.ToolButton {
+		PlasmaComponents3.ToolButton {
 			id: removeButton
 			Layout.alignment: Qt.AlignTop
 			visible: !plasmoid.configuration.deleteOnComplete
 			Layout.preferredWidth: checkbox.height
 			Layout.preferredHeight: checkbox.height
-			iconName: 'trash-empty'
+			icon.name: 'trash-empty'
 			opacity: textArea.activeFocus || hovered ? 1 : 0
 
 			onClicked: {
