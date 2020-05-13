@@ -236,6 +236,8 @@ MouseArea {
 					out = out.replace(rUrl, function(m) {
 						return '<a href="' + m + '">' + m + '</a>' + ' ' // Extra space to prevent styling entire text as a link when ending with a link.
 					})
+					// Define before anchor tags.
+					out = '<style>a { color: ' + theme.highlightColor + '; }</style>' + out
 
 					// Render new lines
 					out = out.replace(/\n/g, '<br>')
