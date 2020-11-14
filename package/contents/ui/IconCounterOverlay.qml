@@ -28,9 +28,9 @@ Item {
 	id: overlay
 	readonly property int iconWidthDelta: (icon.width - icon.paintedWidth) / 2
 	property alias text: badgeLabel.text
-	property color backgroundColor: theme.highlightColor
-	property color textColor: theme.backgroundColor
-	property real heightRatio: 0.4
+	property color backgroundColor: plasmoid.configuration.roundCounter ? theme.highlightColor : theme.backgroundColor
+	property color textColor: plasmoid.configuration.roundCounter ? theme.backgroundColor : theme.highlightColor
+	property real heightRatio: plasmoid.configuration.bigCounter ? 1.0 : 0.4
 
 	Item {
 		id: badgeMask
@@ -42,7 +42,7 @@ Item {
 			y: -offset
 			width: badgeRect.width + offset * 2
 			height: badgeRect.height + offset * 2
-			radius: width
+			radius: plasmoid.configuration.roundCounter ? width : 0
 		}
 	}
 
@@ -80,7 +80,7 @@ Item {
 		width: height
 		height: Math.round(parent.height * overlay.heightRatio)
 		color: overlay.backgroundColor
-		radius: width
+		radius: plasmoid.configuration.roundCounter ? width : 0
 
 		PlasmaComponents3.Label {
 			id: badgeLabel

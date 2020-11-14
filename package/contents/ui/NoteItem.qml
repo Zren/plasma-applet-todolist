@@ -254,6 +254,7 @@ Item {
 		return out
 	}
 
+	readonly property bool hasIncomplete: incompleteCount > 0
 	property int incompleteCount: 0
 	function updateIncompleteCount() {
 		var n = 0

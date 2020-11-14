@@ -48,12 +48,12 @@ Item {
 			anchors.fill: parent
 			source: plasmoid.icon
 		}
-			
+
 		IconCounterOverlay {
 			anchors.fill: parent
-			text: noteItem.incompleteCount
-			visible: noteItem.incompleteCount > 0
-			heightRatio: 0.5
+			text: noteItem.hasIncomplete ? noteItem.incompleteCount : "✓"
+			visible: noteItem.hasIncomplete ? true : plasmoid.configuration.showIfNone
+			heightRatio: plasmoid.configuration.bigCounter ? 1 : 0.5
 		}
 
 		onClicked: plasmoid.expanded = !plasmoid.expanded

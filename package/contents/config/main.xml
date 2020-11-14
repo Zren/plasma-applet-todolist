@@ -39,6 +39,15 @@
 		<entry name="fadeCompleted" type="bool">
 			<default>true</default>
 		</entry>
+		<entry name="showIfNone" type="bool">
+			<default>false</default>
+		</entry>
+		<entry name="bigCounter" type="bool">
+			<default>false</default>
+		</entry>
+		<entry name="roundCounter" type="bool">
+			<default>true</default>
+		</entry>
 	</group>
 
 </kcfg>
