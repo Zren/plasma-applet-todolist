@@ -19,10 +19,11 @@ Some awesome users seemed to have packaged this applet under `plasma5-applets-to
 * Arch: https://aur.archlinux.org/packages/plasma5-applets-todolist/
 
 ## Useful shortcuts
-* Shift+Enter: New line on current item.
-* Enter: Next Item.
-* Up/Down: Select Item.
-* Ctrl+Up/Down: Reorder Item.
-* Alt+Enter or Ctrl+Enter: Toggle complete (deletes it).
-* Tab : Indent the list
-* Shift+Tab : UnIndent the list
+
+* `Shift+Enter`: New line on current item
+* `Enter`: Next Item
+* `Up`/`Down`: Select Item
+* `Ctrl+Up`/`Ctrl+Down`: Reorder Item
+* `Alt+Enter` or `Ctrl+Enter`: Toggle complete (deletes it)
+* `Tab`: Indent the list
+* `Shift+Tab`: UnIndent the list
