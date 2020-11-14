@@ -10,6 +10,8 @@ Item {
 		id: noteItem
 	}
 
+	Plasmoid.icon: plasmoid.configuration.icon
+
 	Plasmoid.compactRepresentation: MouseArea {
 		readonly property bool inPanel: (plasmoid.location == PlasmaCore.Types.TopEdge
 			|| plasmoid.location == PlasmaCore.Types.RightEdge

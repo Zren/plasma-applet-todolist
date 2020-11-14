@@ -10,6 +10,14 @@ ConfigPage {
 	showAppletVersion: true
 
 	ConfigSection {
+		visible: plasmoid.location != PlasmaCore.Types.Floating
+
+		ConfigIcon {
+			configKey: 'icon'
+		}
+	}
+
+	ConfigSection {
 		visible: plasmoid.location == PlasmaCore.Types.Floating
 
 		ConfigCheckBox {

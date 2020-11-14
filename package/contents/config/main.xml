@@ -3,6 +3,9 @@
 	<kcfgfile name=""/>
 
 	<group name="General">
+		<entry name="icon" type="string">
+			<default>view-list-symbolic</default>
+		</entry>
 		<entry name="useGlobalNote" type="bool">
 			<default>true</default>
 		</entry>
