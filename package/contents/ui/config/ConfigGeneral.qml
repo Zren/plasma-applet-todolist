@@ -87,9 +87,14 @@ ConfigPage {
 		}
 
 
-		ConfigCheckBox {
-			configKey: 'showIfNone'
-			text: i18n("Show counter if no items are left")
+		ConfigComboBox {
+			configKey: 'showCounter'
+			before: i18n("Show counter:")
+			model: [
+				{ value: "Never", text: i18n("Never") },
+				{ value: "Incomplete", text: i18n("Incomplete items are left") },
+				{ value: "Always", text: i18n("Always") },
+			]
 		}
 
 		ConfigCheckBox {

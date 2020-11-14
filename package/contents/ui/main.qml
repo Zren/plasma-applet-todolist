@@ -52,7 +52,15 @@ Item {
 		IconCounterOverlay {
 			anchors.fill: parent
 			text: noteItem.hasIncomplete ? noteItem.incompleteCount : "✓"
-			visible: noteItem.hasIncomplete ? true : plasmoid.configuration.showIfNone
+			visible: {
+				if (plasmoid.configuration.showCounter == 'Never') {
+					return false
+				} else if (plasmoid.configuration.showCounter == 'Incomplete') {
+					return noteItem.hasIncomplete
+				} else { // 'Always'
+					return true
+				}
+			}
 			heightRatio: plasmoid.configuration.bigCounter ? 1 : 0.5
 		}
 

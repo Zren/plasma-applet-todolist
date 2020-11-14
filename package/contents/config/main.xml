@@ -39,8 +39,9 @@
 		<entry name="fadeCompleted" type="bool">
 			<default>true</default>
 		</entry>
-		<entry name="showIfNone" type="bool">
-			<default>false</default>
+		<entry name="showCounter" type="string">
+			<!-- Never, Incomplete, Always -->
+			<default>Incomplete</default>
 		</entry>
 		<entry name="bigCounter" type="bool">
 			<default>false</default>
