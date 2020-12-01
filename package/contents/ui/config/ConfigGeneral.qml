@@ -113,6 +113,8 @@ ConfigPage {
 	}
 
 	ConfigSection {
+		visible: plasmoid.location != PlasmaCore.Types.Floating
+
 		Label {
 			text: i18n("Counter style")
 			font.weight: Font.Bold
