@@ -93,7 +93,7 @@ Item {
 	}
 
 	function action_openInTextEditor() {
-		exec("xdg-open ~/.local/share/plasma_notes/todolist")
+		exec("xdg-open ~/.local/share/plasma_notes/" + plasmoid.configuration.noteId)
 	}
 
 	function action_addSection() {

@@ -9,7 +9,11 @@ Item {
 		if (plasmoid.configuration.useGlobalNote) {
 			return 'todolist'
 		} else { // instanceNoteId
-			return 'todolist_' + plasmoid.id
+            if (plasmoid.configuration.useOwnNameNote) {
+                return plasmoid.configuration.noteName
+            } else {
+                return 'todolist_' + plasmoid.id
+            }
 		}
 	}
 	onNoteIdChanged: {
