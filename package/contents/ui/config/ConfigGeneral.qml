@@ -96,7 +96,7 @@ ConfigPage {
 		}
 
 		ConfigCheckBox {
-			enabled: !listTitlePlasmaStyle.checked
+			// enabled: !listTitlePlasmaStyle.checked
 			configKey: "listTitleOutline"
 			text: i18n("Show outline")
 		}
