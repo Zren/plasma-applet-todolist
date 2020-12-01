@@ -16,7 +16,9 @@ ListView {
 	// BottomToTop feels weird, so disable this for now.
 	// verticalLayoutDirection: plasmoid.location == PlasmaCore.Types.BottomEdge ? ListView.BottomToTop : ListView.TopToBottom
 
-	delegate: TodoItemDelegate {}
+	delegate: TodoItemDelegate {
+		width: ListView.view.width
+	}
 	
 	remove: Transition {
 		NumberAnimation { property: "opacity"; to: 0; duration: 400 }

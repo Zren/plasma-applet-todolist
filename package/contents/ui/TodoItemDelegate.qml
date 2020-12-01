@@ -7,10 +7,7 @@ import org.kde.draganddrop 2.0 as DragAndDrop
 
 MouseArea {
 	id: todoItemDelegate
-	width: parent.width
-	// height: todoItemRow.height
 	implicitHeight: todoItemRow.implicitHeight
-	height: implicitHeight
 	hoverEnabled: true
 
 	property var todoModel: listView.model
@@ -87,8 +84,8 @@ MouseArea {
 
 	RowLayout {
 		id: todoItemRow
-		width: parent.width
-		// height: Math.max(checkbox.height, textArea.height)
+		anchors.left: parent.left
+		anchors.right: parent.right
 		spacing: 0
 
 		Item {
@@ -101,7 +98,7 @@ MouseArea {
 			hoverEnabled: true
 			cursorShape: Qt.OpenHandCursor
 			Layout.fillHeight: true
-			Layout.preferredWidth: checkbox.height
+			implicitWidth: checkbox.implicitHeight
 			property var dragItemDelegate: todoItemDelegate
 			property var dragItemModel: todoModel
 			property int dragItemIndex: index
@@ -259,8 +256,8 @@ MouseArea {
 			id: removeButton
 			Layout.alignment: Qt.AlignTop
 			visible: !plasmoid.configuration.deleteOnComplete
-			Layout.preferredWidth: checkbox.height
-			Layout.preferredHeight: checkbox.height
+			Layout.preferredWidth: checkbox.implicitHeight
+			Layout.preferredHeight: checkbox.implicitHeight
 			icon.name: 'trash-empty'
 			opacity: textArea.activeFocus || hovered ? 1 : 0
 
