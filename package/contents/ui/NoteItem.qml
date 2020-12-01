@@ -5,11 +5,12 @@ import org.kde.plasma.private.notes 0.1 as NotesWidget
 Item {
 	id: noteItem
 
+	// Keep in sync with ConfigGeneral.qml
 	readonly property string noteId: {
 		if (plasmoid.configuration.useGlobalNote) {
 			return 'todolist'
-		} else if (plasmoid.configuration.useOwnNameNote) {
-			return plasmoid.configuration.noteName
+		} else if (plasmoid.configuration.noteFilename) {
+			return plasmoid.configuration.noteFilename
 		} else { // instanceNoteId
 			return 'todolist_' + plasmoid.id
 		}

@@ -9,10 +9,7 @@
 		<entry name="useGlobalNote" type="bool">
 			<default>true</default>
 		</entry>
-		<entry name="useOwnNameNote" type="bool">
-			<default>true</default>
-		</entry>
-		<entry name="noteName" type="string">
+		<entry name="noteFilename" type="string">
 			<default></default>
 		</entry>
 		<entry name="noteId" type="string">

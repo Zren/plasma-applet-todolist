@@ -33,24 +33,34 @@ ConfigPage {
 
 	ConfigSection {
 		Label {
-			text: i18n("Note Name")
+			text: i18n("Note Filename")
 			font.weight: Font.Bold
 			font.pointSize: theme.defaultFont.pointSize * 1.25
 		}
 
 		ConfigCheckBox {
+			id: useGlobalNote
 			configKey: 'useGlobalNote'
 			text: i18n("Use Global Note")
 		}
 
-		ConfigCheckBox {
-			configKey: 'useOwnNameNote'
-			text: i18n("Use Own Name for the Note")
-		}
+		RowLayout {
+			Label {
+				text: i18n("Filename:")
+			}
+			ConfigString {
+				configKey: 'noteFilename'
+				enabled: !useGlobalNote.checked
 
-		ConfigTextField {
-			configKey: 'noteName'
-			placeholderText: i18n("Note Name")
+				// Keep in sync with NoteItem.qml
+				placeholderText: {
+					if (plasmoid.configuration.useGlobalNote) {
+						return 'todolist'
+					} else { // instanceNoteId
+						return 'todolist_' + plasmoid.id
+					}
+				}
+			}
 		}
 	}
 
