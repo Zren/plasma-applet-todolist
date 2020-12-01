@@ -8,12 +8,10 @@ Item {
 	readonly property string noteId: {
 		if (plasmoid.configuration.useGlobalNote) {
 			return 'todolist'
+		} else if (plasmoid.configuration.useOwnNameNote) {
+			return plasmoid.configuration.noteName
 		} else { // instanceNoteId
-            if (plasmoid.configuration.useOwnNameNote) {
-                return plasmoid.configuration.noteName
-            } else {
-                return 'todolist_' + plasmoid.id
-            }
+			return 'todolist_' + plasmoid.id
 		}
 	}
 	onNoteIdChanged: {

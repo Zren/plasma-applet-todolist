@@ -9,13 +9,13 @@
 		<entry name="useGlobalNote" type="bool">
 			<default>true</default>
 		</entry>
-               <entry name="useOwnNameNote" type="bool">
+		<entry name="useOwnNameNote" type="bool">
 			<default>true</default>
 		</entry>
 		<entry name="noteName" type="string">
 			<default></default>
 		</entry>
-               <entry name="noteId" type="string">
+		<entry name="noteId" type="string">
 			<default></default>
 		</entry>
 		<entry name="showCompletedItems" type="Bool">
