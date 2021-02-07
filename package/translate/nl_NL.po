@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2020-05-12 13:44-0400\n"
+"POT-Creation-Date: 2021-02-06 21:14-0500\n"
 "PO-Revision-Date: 2019-03-31 17:10+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -31,6 +31,18 @@ msgid "Desktop Widget: Show background"
 msgstr "Bureaubladwidget: achtergrond tonen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Note Filename"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Use Global Note"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Filename:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Completed Items"
 msgstr "Afgeronde taken"
 
@@ -51,16 +63,40 @@ msgid "List Title Style"
 msgstr "Stijl van lijsttitel"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Show text field background"
-msgstr "Achtergrond in tekstveld tonen"
-
-#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Bold"
 msgstr "Vetgedrukt"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show outline"
 msgstr "Randen tonen"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Counter style"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Show counter:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Never"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Incomplete items are left"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Always"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Use big counter"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Use round counter"
+msgstr ""
 
 #: ../contents/ui/lib/AppletVersion.qml
 msgid "<b>Version:</b> %1"
@@ -90,3 +126,6 @@ msgstr "Lijst verwijderen"
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
 msgstr ""
 "Weet je zeker dat je de lijst \"%1\", met daarop %2 taken, wilt verwijderen?"
+
+#~ msgid "Show text field background"
+#~ msgstr "Achtergrond in tekstveld tonen"
