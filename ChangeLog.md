@@ -1,3 +1,13 @@
+## v13 - February 6 2021
+
+* Refactor to use PlasmaComponents3/QtQuickControls2. Bump min Plasma requirement to 5.18.
+* Add configurable icon (Issue #57)
+* Add options to always show/hide the counter, and configure its appearance by @maximmenshikov (Pull Request #20)
+* Expose ability to use custom todolist for each widget by @destogl (Pull Request #19)
+* Set links in TextArea to highlightColor
+* Fix a few warnings in the logs.
+* Add keyboard shortcuts to ReadMe by @ishank-dev (Pull Request #24)
+
 ## v12 - May 12 2020
 
 * Comment out unused import for PlasmaComponents3 (Issue #16) (Pull Request #18 by @eiffel-fl)
