@@ -1,4 +1,4 @@
-# Translation of todolist in LANGUAGE
+# Translation of todolist in tr
 # Copyright (C) 2021
 # This file is distributed under the same license as the todolist package.
 # FIRST AUTHOR mucahit@tutanota.com, 2021.
@@ -7,14 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2021-03-09 12:46+0300\n"
+"POT-Creation-Date: 2021-03-09 14:41-0500\n"
 "PO-Revision-Date: 2021-03-09 12:46+0300\n"
 "Last-Translator: Mücahit KURTLAR <mucahit@tutanota.com>\n"
 "Language-Team: Türkçe <mucahit@tutanota.com>\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../metadata.desktop
+msgid "TodoList"
+msgstr ""
 
 #: ../contents/config/config.qml
 msgid "General"

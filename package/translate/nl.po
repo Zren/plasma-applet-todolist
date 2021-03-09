@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2021-02-06 21:14-0500\n"
+"POT-Creation-Date: 2021-03-09 14:41-0500\n"
 "PO-Revision-Date: 2021-02-07 12:35+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../metadata.desktop
+msgid "TodoList"
+msgstr ""
 
 #: ../contents/config/config.qml
 msgid "General"
