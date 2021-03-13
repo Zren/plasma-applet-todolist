@@ -123,4 +123,4 @@ msgstr "Apagar Lista"
 
 #: ../contents/ui/NoteSection.qml
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
-msgstr "Tem a certeza que deseja excluir a lista \ "% 1 \" com %2 itens?"
+msgstr "Tem a certeza que deseja excluir a lista \"%1\" com %2 itens?"
