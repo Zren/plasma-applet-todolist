@@ -51,15 +51,15 @@ msgstr "Apagar ao Concluir"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Strikeout"
-msgstr "Rasurado"
+msgstr "Rasurar ao Concluir"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Faded"
-msgstr "Desvanecido"
+msgstr "Desvanecer ao Concluir"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "List Title Style"
-msgstr "Estilo do título da lista"
+msgstr "Estilo do Título da lista"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Bold"
@@ -123,4 +123,4 @@ msgstr "Apagar Lista"
 
 #: ../contents/ui/NoteSection.qml
 msgid "Are you sure you want to delete the list \"%1\" with %2 items?"
-msgstr "Tem a certeza que deseja excluir a lista \ "% 1 \" com %2 itens?"
+msgstr "Tem a certeza que deseja excluir a lista \"%1\" com %2 itens?"
