@@ -67,7 +67,7 @@ msgstr "Negrito"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show outline"
-msgstr "Mostrar sublinhado"
+msgstr "Mostrar sombra"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Counter style"
