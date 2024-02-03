@@ -40,4 +40,5 @@ Or if you know how to make a pull request
 | hr       |   17/28 |   60% |
 | nl       |   27/28 |   96% |
 | pt       |   28/28 |  100% |
+| ro       |   28/28 |  100% |
 | tr       |   27/28 |   96% |
