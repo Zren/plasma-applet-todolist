@@ -1,5 +1,5 @@
 # Translation of todolist in LANGUAGE
-# Copyright (C) 2021
+# Copyright (C) 2024
 # This file is distributed under the same license as the todolist package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: todolist\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-todolist\n"
-"POT-Creation-Date: 2021-03-09 14:41-0500\n"
+"POT-Creation-Date: 2024-02-03 13:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
