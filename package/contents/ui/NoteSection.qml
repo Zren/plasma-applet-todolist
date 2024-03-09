@@ -6,6 +6,8 @@ import QtQuick.Layouts
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.draganddrop as DragAndDrop
 import org.kde.ksvg as KSvg
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
 
 ColumnLayout {
 	id: container
@@ -55,7 +57,7 @@ ColumnLayout {
 			DragAndDrop.DragArea {
 				id: dragArea
 				Layout.fillHeight: true
-				Layout.preferredWidth: 30 * units.devicePixelRatio // Same width as drag area in todoItem
+				Layout.preferredWidth: 30 // Same width as drag area in todoItem
 
 				delegate: labelRow
 
@@ -65,7 +67,7 @@ ColumnLayout {
 					anchors.top: parent.top
 					anchors.bottom: parent.bottom
 					width: parent.width / 2
-					imagePath: plasmoid.file("", "images/dragarea.svg")
+					imagePath: PlasmoidItem.file("", "images/dragarea.svg")
 				}
 			}
 
@@ -81,7 +83,7 @@ ColumnLayout {
 				background: Item {}
 				font.pointSize: -1
 				font.pixelSize: pinButton.height
-				font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+				font.weight: Plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
 				implicitHeight: contentHeight
 				padding: 0
 				leftPadding: 0
@@ -99,14 +101,14 @@ ColumnLayout {
 				PlasmaComponents.Label {
 					id: textOutline
 					anchors.fill: parent
-					visible: !textField.usingPlasmaStyle && plasmoid.configuration.listTitleOutline
+					visible: !textField.usingPlasmaStyle && Plasmoid.configuration.listTitleOutline
 					text: parent.text
 					font.pointSize: -1
 					font.pixelSize: pinButton.height
-					font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+					font.weight: Plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
 					color: "transparent"
 					style: Text.Outline
-					styleColor: theme.backgroundColor
+					styleColor: Kirigami.Theme.backgroundColor
 					verticalAlignment: Text.AlignVCenter
 				}
 

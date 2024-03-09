@@ -5,13 +5,15 @@ import QtQuick.Window
 
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
 
 FocusScope {
 	id: fullRepresentation
-	Layout.minimumWidth: PlasmaCore.Units.gridUnit * 10 * noteItem.numSections
-	Layout.minimumHeight: PlasmaCore.Units.gridUnit * 10
-	Layout.preferredWidth: PlasmaCore.Units.gridUnit * 20 * noteItem.numSections
-	Layout.preferredHeight: Math.min(Math.max(PlasmaCore.Units.gridUnit * 20, maxContentHeight), Screen.desktopAvailableHeight) // Binding loop warning (meh).
+	Layout.minimumWidth: Kirigami.Units.gridUnit * 10 * noteItem.numSections
+	Layout.minimumHeight: Kirigami.Units.gridUnit * 10
+	Layout.preferredWidth: Kirigami.Units.gridUnit * 20 * noteItem.numSections
+	Layout.preferredHeight: Math.min(Math.max(Kirigami.Units.gridUnit * 20, maxContentHeight), Screen.desktopAvailableHeight) // Binding loop warning (meh).
 	property int maxContentHeight: 0
 	function updateMaxContentHeight() {
 		var maxHeight = 0
@@ -37,7 +39,7 @@ FocusScope {
 		id: notesRow
 		anchors.fill: parent
 
-		opacity: plasmoid.configuration.hidden ? 0 : 1
+		opacity: Plasmoid.configuration.hidden ? 0 : 1
 		visible: opacity > 0
 
 		Behavior on opacity {
@@ -64,11 +66,11 @@ FocusScope {
 		id: pinButton
 		anchors.top: parent.top
 		anchors.right: parent.right
-		width: Math.round(PlasmaCore.Units.gridUnit * 1.25)
+		width: Math.round(Kirigami.Units.gridUnit * 1.25)
 		height: width
 		checkable: true
 		icon.name: "window-pin"
-		onCheckedChanged: plasmoid.hideOnWindowDeactivate = !checked
+		onCheckedChanged: Plasmoid.hideOnWindowDeactivate = !checked
 		visible: !isDesktopContainment
 	}
 }

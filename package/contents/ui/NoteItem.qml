@@ -1,18 +1,19 @@
 import QtQuick
 
 import org.kde.plasma.private.notes as NotesWidget
+import org.kde.plasma.plasmoid
 
 Item {
 	id: noteItem
 
 	// Keep in sync with ConfigGeneral.qml
 	readonly property string noteId: {
-		if (plasmoid.configuration.useGlobalNote) {
+		if (Plasmoid.configuration.useGlobalNote) {
 			return 'todolist'
-		} else if (plasmoid.configuration.noteFilename) {
-			return plasmoid.configuration.noteFilename
+		} else if (Plasmoid.configuration.noteFilename) {
+			return Plasmoid.configuration.noteFilename
 		} else { // instanceNoteId
-			return 'todolist_' + plasmoid.id
+			return 'todolist_' + Plasmoid.id
 		}
 	}
 	onNoteIdChanged: {
@@ -20,7 +21,7 @@ Item {
 		if (!noteItem.note || noteItem.note.id != noteId) {
 			noteItem.note = noteManager.loadNote(noteId)
 		}
-		plasmoid.configuration.noteId = noteId
+		Plasmoid.configuration.noteId = noteId
 	}
 
 	NotesWidget.NoteManager { id: noteManager }
@@ -344,7 +345,7 @@ Item {
 	}
 
 	Connections {
-		target: plasmoid.configuration
+		target: Plasmoid.configuration
 		onShowCompletedItemsChanged: todoModel.updateVisibleItems()
 	}
 

@@ -1,5 +1,7 @@
 import QtQuick
 
+import org.kde.plasma.plasmoid
+
 ListModel {
 	id: todoModel
 	signal update()
@@ -48,7 +50,7 @@ ListModel {
 			var todoItem = get(i)
 			var wasVisible = todoItem.isVisible
 			var incomplete = todoItem.status == 'needsAction'
-			var shouldBeVisible = plasmoid.configuration.showCompletedItems || incomplete
+			var shouldBeVisible = Plasmoid.configuration.showCompletedItems || incomplete
 			var isPlaceholder = !todoItem.title
 			if (incomplete && !isPlaceholder) {
 				incompleteCount += 1

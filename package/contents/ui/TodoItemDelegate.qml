@@ -5,7 +5,8 @@ import QtQuick.Layouts
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.draganddrop as DragAndDrop
 import org.kde.ksvg as KSvg
-import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
 
 MouseArea {
 	id: todoItemDelegate
@@ -116,14 +117,14 @@ MouseArea {
 				anchors.top: parent.top
 				anchors.bottom: parent.bottom
 				width: parent.width / 2
-				imagePath: plasmoid.file("", "images/dragarea.svg")
+				imagePath: "images/dragarea.svg"
 			}
 		}
 
 		PlasmaComponents.CheckBox {
 			id: checkbox
 			Layout.alignment: Qt.AlignTop
-			property int size: 30 * PlasmaCore.Units.devicePixelRatio
+			property int size: 30
 			Layout.minimumWidth: size
 			Layout.minimumHeight: size
 			checked: todoItemDelegate.isCompleted
@@ -207,7 +208,7 @@ MouseArea {
 					return '<a href="' + m + '">' + m + '</a>' + ' ' // Extra space to prevent styling entire text as a link when ending with a link.
 				})
 				// Define before anchor tags.
-				out = '<style>a { color: ' + PlasmaCore.Theme.highlightColor + '; }</style>' + out
+				out = '<style>a { color: ' + Kirigami.Theme.highlightColor + '; }</style>' + out
 
 				// Render new lines
 				out = out.replace(/\n/g, '<br>')
@@ -215,9 +216,9 @@ MouseArea {
 				return out
 			}
 
-			font.strikeout: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.strikeoutCompleted
+			font.strikeout: !isEditing && todoItemDelegate.isCompleted && Plasmoid.configuration.strikeoutCompleted
 
-			readonly property bool shouldFade: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.fadeCompleted
+			readonly property bool shouldFade: !isEditing && todoItemDelegate.isCompleted && Plasmoid.configuration.fadeCompleted
 			opacity: shouldFade ? 0.6 : 1
 
 			Keys.onPressed: {
@@ -257,7 +258,7 @@ MouseArea {
 		PlasmaComponents.ToolButton {
 			id: removeButton
 			Layout.alignment: Qt.AlignTop
-			visible: !plasmoid.configuration.deleteOnComplete
+			visible: !Plasmoid.configuration.deleteOnComplete
 			Layout.preferredWidth: checkbox.implicitHeight
 			Layout.preferredHeight: checkbox.implicitHeight
 			icon.name: 'trash-empty'
