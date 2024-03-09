@@ -117,7 +117,7 @@ MouseArea {
 				anchors.top: parent.top
 				anchors.bottom: parent.bottom
 				width: parent.width / 2
-				imagePath: "images/dragarea.svg"
+				imagePath: "../images/dragarea.svg"
 			}
 		}
 
