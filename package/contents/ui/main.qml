@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core s PlasmaCore
+import org.kde.kirigami as Kirigami
 
 PlasmoidItem {
 	id: main
@@ -10,9 +11,9 @@ PlasmoidItem {
 		id: noteItem
 	}
 
-	Plasmoid.icon: plasmoid.configuration.icon
+	icon: plasmoid.configuration.icon
 
-	Plasmoid.compactRepresentation: MouseArea {
+	compactRepresentation: MouseArea {
 		readonly property bool inPanel: (plasmoid.location == PlasmaCore.Types.TopEdge
 			|| plasmoid.location == PlasmaCore.Types.RightEdge
 			|| plasmoid.location == PlasmaCore.Types.BottomEdge
@@ -43,7 +44,7 @@ PlasmoidItem {
 		Layout.maximumWidth: inPanel ? units.iconSizeHints.panel : -1
 		Layout.maximumHeight: inPanel ? units.iconSizeHints.panel : -1
 
-		PlasmaCore.IconItem {
+		Kirigami.Icon {
 			id: icon
 			anchors.fill: parent
 			source: plasmoid.icon
@@ -67,8 +68,8 @@ PlasmoidItem {
 		onClicked: plasmoid.expanded = !plasmoid.expanded
 	}
 
-	Plasmoid.fullRepresentation: FullRepresentation {
-		Plasmoid.backgroundHints: isDesktopContainment && !plasmoid.configuration.showBackground ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
+	fullRepresentation: FullRepresentation {
+		backgroundHints: isDesktopContainment && !plasmoid.configuration.showBackground ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
 		isDesktopContainment: plasmoid.location == PlasmaCore.Types.Floating
 
 		// Connections {

@@ -108,7 +108,7 @@ MouseArea {
 				delegate: todoItemRow
 			}
 
-			PlasmaCore.FrameSvgItem {
+			KSvg.FrameSvgItem {
 				visible: todoItemDelegate.containsMouse && !dropArea.containsDrag
 				anchors.horizontalCenter: parent.horizontalCenter
 				anchors.top: parent.top

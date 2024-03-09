@@ -3,8 +3,7 @@ import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1
 import QtQuick.Window 2.2
 
-import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.components as PlasmaComponents3
+import org.kde.plasma.components as PlasmaComponents
 
 FocusScope {
 	id: fullRepresentation
@@ -60,7 +59,7 @@ FocusScope {
 
 	}
 
-	PlasmaComponents3.ToolButton {
+	PlasmaComponents.ToolButton {
 		id: pinButton
 		anchors.top: parent.top
 		anchors.right: parent.right

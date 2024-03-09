@@ -62,7 +62,7 @@ ColumnLayout {
 
 				delegate: labelRow
 
-				PlasmaCore.FrameSvgItem {
+				KSvg.FrameSvgItem {
 					visible: labelMouseArea.containsMouse && !noteSectionDropArea.containsDrag
 					anchors.horizontalCenter: parent.horizontalCenter
 					anchors.top: parent.top
