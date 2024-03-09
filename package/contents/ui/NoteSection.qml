@@ -3,7 +3,6 @@ import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.2 // MessageDialog
 import QtQuick.Layouts 1.1
 
-import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.extras as PlasmaExtras
 import QtQuick.Controls.Styles.Plasma as PlasmaStyles

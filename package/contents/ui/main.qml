@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.1
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core s PlasmaCore
 import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasma5support as Plasma5Support
 
 PlasmoidItem {
 	id: main
@@ -83,7 +84,7 @@ PlasmoidItem {
 	}
 
 
-	PlasmaCore.DataSource {
+	Plasma5Support.DataSource {
 		id: executable
 		engine: "executable"
 		connectedSources: []
