@@ -137,12 +137,30 @@ PlasmoidItem {
 		}
 	}
 
-	Component.onCompleted: {
-		Plasmoid.setAction("openInTextEditor", i18n("Open in Text Editor"), "accessories-text-editor")
-		Plasmoid.setAction("addSection", i18n("Add List"), "list-add")
-		Plasmoid.setAction("toggleDeleteOnComplete", i18n("Delete on Complete"), "checkmark")
-		Plasmoid.setAction("toggleHidden", i18n("Hide"), "checkmark")
-		// plasmoid.setAction("deleteCompleted", i18n("Delete All Completed"), "trash-empty")
-		updateContextMenu()
-	}
+	Plasmoid.contextualActions: [
+		PlasmaCore.Action {
+			text: i18n("Open in Text Editor")
+			icon.name: "accessories-text-editor"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_openInTextEditor()
+		},
+		PlasmaCore.Action {
+			text: i18n("Add to List")
+			icon.name: "list-add"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_addSection()
+		},
+		PlasmaCore.Action {
+			text: i18n("Delete on Complete")
+			icon.name: "checkmark"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_toggleDeleteOnComplete()
+		},
+		PlasmaCore.Action {
+			text: i18n("Hide")
+			icon.name: "checkmark"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_openInTextEditor()
+		}
+	]
 }

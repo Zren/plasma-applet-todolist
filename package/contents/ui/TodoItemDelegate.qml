@@ -56,7 +56,7 @@ MouseArea {
 		z: -1
 		// anchors.margins: 10
 
-		onEntered: {
+		onEntered: (drag) => {
 			if (drag.source.dragItemModel) {
 				if (todoModel == drag.source.dragItemModel) {
 					todoModel.move(drag.source.dragItemIndex, index, 1)

@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.plasma.core as PlasmaCore
+import org.kde.kirigami as Kirigami
 
 import "../lib"
 
@@ -10,7 +11,7 @@ ConfigPage {
 	showAppletVersion: true
 
 	ConfigSection {
-		visible: plasmoid.location != PlasmaCore.Types.Floating
+		visible: Plasmoid.location != PlasmaCore.Types.Floating
 
 		ConfigIcon {
 			configKey: 'icon'
@@ -18,7 +19,7 @@ ConfigPage {
 	}
 
 	ConfigSection {
-		visible: plasmoid.location == PlasmaCore.Types.Floating
+		visible: Plasmoid.location == PlasmaCore.Types.Floating
 
 		ConfigCheckBox {
 			configKey: 'hidden'
@@ -35,7 +36,7 @@ ConfigPage {
 		Label {
 			text: i18n("Note Filename")
 			font.weight: Font.Bold
-			font.pointSize: theme.defaultFont.pointSize * 1.25
+			font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.25
 		}
 
 		ConfigCheckBox {
@@ -54,7 +55,7 @@ ConfigPage {
 
 				// Keep in sync with NoteItem.qml
 				placeholderText: {
-					if (plasmoid.configuration.useGlobalNote) {
+					if (Plasmoid.configuration.useGlobalNote) {
 						return 'todolist'
 					} else { // instanceNoteId
 						return 'todolist_' + plasmoid.id
@@ -68,7 +69,7 @@ ConfigPage {
 		Label {
 			text: i18n("Completed Items")
 			font.weight: Font.Bold
-			font.pointSize: theme.defaultFont.pointSize * 1.25
+			font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.25
 		}
 
 		ConfigCheckBox {
@@ -91,7 +92,7 @@ ConfigPage {
 		Label {
 			text: i18n("List Title Style")
 			font.weight: Font.Bold
-			font.pointSize: theme.defaultFont.pointSize * 1.25
+			font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.25
 		}
 
 		// ConfigCheckBox {
@@ -113,12 +114,12 @@ ConfigPage {
 	}
 
 	ConfigSection {
-		visible: plasmoid.location != PlasmaCore.Types.Floating
+		visible: Plasmoid.location != PlasmaCore.Types.Floating
 
 		Label {
 			text: i18n("Counter style")
 			font.weight: Font.Bold
-			font.pointSize: theme.defaultFont.pointSize * 1.25
+			font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.25
 		}
 
 
