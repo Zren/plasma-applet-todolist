@@ -1,8 +1,10 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.3 as QQC2
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.draganddrop as DragAndDrop
+import org.kde.ksvg as KSvg
 
 MouseArea {
 	id: todoItemDelegate

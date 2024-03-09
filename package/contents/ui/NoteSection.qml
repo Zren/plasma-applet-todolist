@@ -1,13 +1,11 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.5
-import QtQuick.Dialogs 1.2 // MessageDialog
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Dialogs // MessageDialog
+import QtQuick.Layouts
 
 import org.kde.plasma.components as PlasmaComponents
-import org.kde.plasma.extras as PlasmaExtras
-import QtQuick.Controls.Styles.Plasma as PlasmaStyles
-
-import org.kde.draganddrop 2.0 as DragAndDrop
+import org.kde.draganddrop as DragAndDrop
+import org.kde.ksvg as KSvg
 
 ColumnLayout {
 	id: container
@@ -140,11 +138,9 @@ ColumnLayout {
 					MessageDialog {
 						// visible: true
 						title: i18n("Delete List")
-						icon: StandardIcon.Warning
 						text: i18n("Are you sure you want to delete the list \"%1\" with %2 items?", noteSection.label || ' ', Math.max(0, noteSection.model.count - 1))
-						standardButtons: StandardButton.Yes | StandardButton.Cancel
 
-						onYes: noteItem.removeSection(index)
+						onAccepted: noteItem.removeSection(index)
 						Component.onCompleted: visible = true
 					}
 				}
@@ -153,7 +149,7 @@ ColumnLayout {
 		}
 	}
 
-	PlasmaExtras.ScrollArea {
+	ScrollView {
 		Layout.fillWidth: true
 		Layout.fillHeight: true
 

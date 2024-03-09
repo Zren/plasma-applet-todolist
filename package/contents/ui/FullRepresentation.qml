@@ -1,16 +1,17 @@
-import QtQuick 2.0
-import QtQuick.Controls 1.1
-import QtQuick.Layouts 1.1
-import QtQuick.Window 2.2
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.Window
 
 import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.core as PlasmaCore
 
 FocusScope {
 	id: fullRepresentation
-	Layout.minimumWidth: units.gridUnit * 10 * noteItem.numSections
-	Layout.minimumHeight: units.gridUnit * 10
-	Layout.preferredWidth: units.gridUnit * 20 * noteItem.numSections
-	Layout.preferredHeight: Math.min(Math.max(units.gridUnit * 20, maxContentHeight), Screen.desktopAvailableHeight) // Binding loop warning (meh).
+	Layout.minimumWidth: PlasmaCore.Units.gridUnit * 10 * noteItem.numSections
+	Layout.minimumHeight: PlasmaCore.Units.gridUnit * 10
+	Layout.preferredWidth: PlasmaCore.Units.gridUnit * 20 * noteItem.numSections
+	Layout.preferredHeight: Math.min(Math.max(PlasmaCore.Units.gridUnit * 20, maxContentHeight), Screen.desktopAvailableHeight) // Binding loop warning (meh).
 	property int maxContentHeight: 0
 	function updateMaxContentHeight() {
 		var maxHeight = 0
@@ -63,7 +64,7 @@ FocusScope {
 		id: pinButton
 		anchors.top: parent.top
 		anchors.right: parent.right
-		width: Math.round(units.gridUnit * 1.25)
+		width: Math.round(PlasmaCore.Units.gridUnit * 1.25)
 		height: width
 		checkable: true
 		icon.name: "window-pin"

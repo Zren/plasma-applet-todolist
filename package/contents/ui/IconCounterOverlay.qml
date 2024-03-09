@@ -20,7 +20,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  ***************************************************************************/
 
-import QtQuick 2.4
+import QtQuick
 
 import org.kde.plasma.components as PlasmaComponents
 

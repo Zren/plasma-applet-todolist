@@ -1,7 +1,8 @@
-import QtQuick 2.0
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Layouts
+
 import org.kde.plasma.plasmoid
-import org.kde.plasma.core s PlasmaCore
+import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasma5support as Plasma5Support
 
@@ -11,8 +12,6 @@ PlasmoidItem {
 	NoteItem {
 		id: noteItem
 	}
-
-	icon: plasmoid.configuration.icon
 
 	compactRepresentation: MouseArea {
 		readonly property bool inPanel: (plasmoid.location == PlasmaCore.Types.TopEdge
@@ -70,7 +69,7 @@ PlasmoidItem {
 	}
 
 	fullRepresentation: FullRepresentation {
-		backgroundHints: isDesktopContainment && !plasmoid.configuration.showBackground ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
+		Plasmoid.backgroundHints: isDesktopContainment && !plasmoid.configuration.showBackground ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
 		isDesktopContainment: plasmoid.location == PlasmaCore.Types.Floating
 
 		// Connections {
