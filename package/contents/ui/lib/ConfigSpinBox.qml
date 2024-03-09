@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import org.kde.plasma.plasmoid
+
 RowLayout {
 	id: configSpinBox
 
@@ -42,6 +44,6 @@ RowLayout {
 	Timer { // throttle
 		id: serializeTimer
 		interval: 300
-		onTriggered: plasmoid.configuration[configKey] = value
+		onTriggered: Plasmoid.configuration[configKey] = value
 	}
 }

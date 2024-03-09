@@ -4,13 +4,15 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import org.kde.plasma.plasmoid
+
 TextField {
 	id: configString
 	Layout.fillWidth: true
 
 	property string configKey: ''
 	property alias value: configString.text
-	readonly property string configValue: configKey ? plasmoid.configuration[configKey] : ""
+	readonly property string configValue: configKey ? Plasmoid.configuration[configKey] : ""
 	onConfigValueChanged: {
 		if (!configString.focus && value != configValue) {
 			value = configValue
@@ -37,7 +39,7 @@ TextField {
 		interval: 300
 		onTriggered: {
 			if (configKey) {
-				plasmoid.configuration[configKey] = value
+				Plasmoid.configuration[configKey] = value
 			}
 		}
 	}

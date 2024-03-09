@@ -8,6 +8,8 @@ import QtQuick.Dialogs
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.kquickcontrolsaddons as KQuickAddons
+import org.kde.kirigami as Kirigami
+
 
 import ".."
 
@@ -18,22 +20,22 @@ RowLayout {
 
 	property string configKey: ''
 	property alias value: textField.text
-	readonly property string configValue: configKey ? plasmoid.configuration[configKey] : ""
+	readonly property string configValue: configKey ? Plasmoid.configuration[configKey] : ""
 	onConfigValueChanged: {
 		if (!textField.focus && value != configValue) {
 			value = configValue
 		}
 	}
-	property int previewIconSize: units.iconSizes.medium
+	property int previewIconSize: Kirigami.Units.iconSizes.medium
 	property string defaultValue: ""
 	property string placeholderValue: ""
 
 	// org.kde.plasma.kickoff
 	Button {
 		id: iconButton
-		Layout.minimumWidth: previewFrame.width + units.smallSpacing * 2
+		Layout.minimumWidth: previewFrame.width + Kirigami.Units.smallSpacing * 2
 		Layout.maximumWidth: Layout.minimumWidth
-		Layout.minimumHeight: previewFrame.height + units.smallSpacing * 2
+		Layout.minimumHeight: previewFrame.height + Kirigami.Units.smallSpacing * 2
 		Layout.maximumHeight: Layout.minimumWidth
 
 		
@@ -51,7 +53,7 @@ RowLayout {
 		PlasmaCore.FrameSvgItem {
 			id: previewFrame
 			anchors.centerIn: parent
-			imagePath: plasmoid.location === PlasmaCore.Types.Vertical || plasmoid.location === PlasmaCore.Types.Horizontal
+			imagePath: plasmoid.location === PlasmaCore.Types.Vertical || Plasmoid.location === PlasmaCore.Types.Horizontal
 					 ? "widgets/panel-background" : "widgets/background"
 			width: previewIconSize + fixedMargins.left + fixedMargins.right
 			height: previewIconSize + fixedMargins.top + fixedMargins.bottom
@@ -134,7 +136,7 @@ RowLayout {
 		interval: 300
 		onTriggered: {
 			if (configKey) {
-				plasmoid.configuration[configKey] = configIcon.value
+				Plasmoid.configuration[configKey] = configIcon.value
 			}
 		}
 	}

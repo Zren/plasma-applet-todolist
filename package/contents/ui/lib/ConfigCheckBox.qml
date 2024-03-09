@@ -2,15 +2,13 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.components as PlasmaComponents
-
+import org.kde.plasma.plasmoid
 import ".."
 
 CheckBox {
 	id: configCheckBox
 
 	property string configKey: ''
-	checked: plasmoid.configuration[configKey]
-	onClicked: plasmoid.configuration[configKey] = !plasmoid.configuration[configKey]
+	checked: Plasmoid.configuration[configKey]
+	onClicked: Plasmoid.configuration[configKey] = !Plasmoid.configuration[configKey]
 }
