@@ -1,2 +1,0 @@
-1. Removed versioning from plasma imports.
-2. Rudimentry port of install scripts to plasma 6. Probably doesn't actually work.
