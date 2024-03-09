@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.draganddrop as DragAndDrop
 import org.kde.ksvg as KSvg
+import org.kde.plasma.core as PlasmaCore
 
 MouseArea {
 	id: todoItemDelegate
@@ -122,7 +123,7 @@ MouseArea {
 		PlasmaComponents.CheckBox {
 			id: checkbox
 			Layout.alignment: Qt.AlignTop
-			property int size: 30 * units.devicePixelRatio
+			property int size: 30 * PlasmaCore.Units.devicePixelRatio
 			Layout.minimumWidth: size
 			Layout.minimumHeight: size
 			checked: todoItemDelegate.isCompleted
@@ -206,7 +207,7 @@ MouseArea {
 					return '<a href="' + m + '">' + m + '</a>' + ' ' // Extra space to prevent styling entire text as a link when ending with a link.
 				})
 				// Define before anchor tags.
-				out = '<style>a { color: ' + theme.highlightColor + '; }</style>' + out
+				out = '<style>a { color: ' + PlasmaCore.Theme.highlightColor + '; }</style>' + out
 
 				// Render new lines
 				out = out.replace(/\n/g, '<br>')

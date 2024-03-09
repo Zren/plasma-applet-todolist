@@ -23,13 +23,14 @@
 import QtQuick
 
 import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.core as PlasmaCore
 
 Item {
 	id: overlay
 	readonly property int iconWidthDelta: (icon.width - icon.paintedWidth) / 2
 	property alias text: badgeLabel.text
-	property color backgroundColor: plasmoid.configuration.roundCounter ? theme.highlightColor : theme.backgroundColor
-	property color textColor: plasmoid.configuration.roundCounter ? theme.backgroundColor : theme.highlightColor
+	property color backgroundColor: plasmoid.configuration.roundCounter ? PlasmaCore.Theme.highlightColor : PlasmaCore.Theme.backgroundColor
+	property color textColor: plasmoid.configuration.roundCounter ? PlasmaCore.Theme.backgroundColor : PlasmaCore.Theme.highlightColor
 	property real heightRatio: plasmoid.configuration.bigCounter ? 1.0 : 0.4
 
 	Item {
