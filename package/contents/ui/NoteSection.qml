@@ -67,7 +67,7 @@ ColumnLayout {
 					anchors.top: parent.top
 					anchors.bottom: parent.bottom
 					width: parent.width / 2
-					imagePath: PlasmoidItem.file("", "images/dragarea.svg")
+					imagePath: "images/dragarea.svg"
 				}
 			}
 
