@@ -1,6 +1,6 @@
 import QtQuick 2.0
 
-import org.kde.plasma.private.notes 0.1 as NotesWidget
+import org.kde.plasma.private.notes as NotesWidget
 
 Item {
 	id: noteItem

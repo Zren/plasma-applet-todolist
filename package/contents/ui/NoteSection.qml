@@ -3,10 +3,10 @@ import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.2 // MessageDialog
 import QtQuick.Layouts 1.1
 
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import QtQuick.Controls.Styles.Plasma 2.0 as PlasmaStyles
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.extras as PlasmaExtras
+import QtQuick.Controls.Styles.Plasma as PlasmaStyles
 
 import org.kde.draganddrop 2.0 as DragAndDrop
 
@@ -72,7 +72,7 @@ ColumnLayout {
 				}
 			}
 
-			PlasmaComponents3.TextField {
+			PlasmaComponents.TextField {
 				id: textField
 				Layout.fillWidth: true
 				text: noteSection.label
@@ -99,7 +99,7 @@ ColumnLayout {
 					text = Qt.binding(function() { return noteSection.label })
 				}
 
-				PlasmaComponents3.Label {
+				PlasmaComponents.Label {
 					id: textOutline
 					anchors.fill: parent
 					visible: !textField.usingPlasmaStyle && plasmoid.configuration.listTitleOutline
@@ -116,7 +116,7 @@ ColumnLayout {
 			}
 		}
 
-		PlasmaComponents3.ToolButton {
+		PlasmaComponents.ToolButton {
 			anchors.right: labelRow.right
 			readonly property bool isRightMostSection: index == notesRepeater.count-1
 			anchors.rightMargin: isRightMostSection && pinButton.visible ? pinButton.width : 0

@@ -22,7 +22,7 @@
 
 import QtQuick 2.4
 
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.components as PlasmaComponents
 
 Item {
 	id: overlay
@@ -82,7 +82,7 @@ Item {
 		color: overlay.backgroundColor
 		radius: plasmoid.configuration.roundCounter ? width : 0
 
-		PlasmaComponents3.Label {
+		PlasmaComponents.Label {
 			id: badgeLabel
 			anchors.centerIn: parent
 			width: height
