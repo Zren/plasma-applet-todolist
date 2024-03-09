@@ -221,7 +221,7 @@ MouseArea {
 			readonly property bool shouldFade: !isEditing && todoItemDelegate.isCompleted && Plasmoid.configuration.fadeCompleted
 			opacity: shouldFade ? 0.6 : 1
 
-			Keys.onPressed: {
+			Keys.onPressed: (event) => {
 				if (event.key == Qt.Key_Tab) {
 					setIndent(model.indent + 1)
 					event.accepted = true

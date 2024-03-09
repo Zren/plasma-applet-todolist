@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import org.kde.plasma.plasmoid
 // import org.kde.plasma.core as PlasmaCore
 
 ListView {
@@ -46,7 +47,8 @@ ListView {
 	}
 
 	Connections {
-		target: plasmoid
+		target: Plasmoid
+		ignoreUnknownSignals: true
 		function onExpandedChanged() {
 			if (expanded) {
 				listView.focus = true
