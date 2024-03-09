@@ -31,7 +31,7 @@ Item {
 	property string noteText: ''
 	Connections {
 		target: note
-		onNoteTextChanged: {
+		function onNoteTextChanged() {
 			// console.log('note.onNoteTextChanged', note.noteText.length)
 			// if (note.noteText != noteText) {
 				noteItem.noteText = note.noteText
@@ -346,7 +346,9 @@ Item {
 
 	Connections {
 		target: Plasmoid.configuration
-		onShowCompletedItemsChanged: todoModel.updateVisibleItems()
+		function onShowCompletedItemsChanged() {
+			todoModel.updateVisibleItems()
+		}
 	}
 
 	Component.onCompleted: {

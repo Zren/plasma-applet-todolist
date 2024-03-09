@@ -129,8 +129,12 @@ PlasmoidItem {
 
 	Connections {
 		target: Plasmoid.configuration
-		onDeleteOnCompleteChanged: updateContextMenu()
-		onHiddenChanged: updateContextMenu()
+		function onDeleteOnCompleteChanged() {
+			updateContextMenu()
+		}
+		function onHiddenChanged() {
+			updateContextMenu()
+		}
 	}
 
 	Component.onCompleted: {

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import org.kde.plasma.core as PlasmaCore
+// import org.kde.plasma.core as PlasmaCore
 
 ListView {
 	id: listView
@@ -47,7 +47,7 @@ ListView {
 
 	Connections {
 		target: plasmoid
-		onExpandedChanged: {
+		function onExpandedChanged() {
 			if (expanded) {
 				listView.focus = true
 				listView.currentIndex = listView.count - 1
