@@ -1,8 +1,9 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.3
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.plasmoid
+// import org.kde.plasma.core as PlasmaCore
 
 ListView {
 	id: listView
@@ -11,7 +12,7 @@ ListView {
 
 	cacheBuffer: 10000000
 	// interactive: false
-	spacing: 4 * units.devicePixelRatio
+	spacing: 4
 
 	// BottomToTop feels weird, so disable this for now.
 	// verticalLayoutDirection: plasmoid.location == PlasmaCore.Types.BottomEdge ? ListView.BottomToTop : ListView.TopToBottom
@@ -46,8 +47,9 @@ ListView {
 	}
 
 	Connections {
-		target: plasmoid
-		onExpandedChanged: {
+		target: Plasmoid
+		ignoreUnknownSignals: true
+		function onExpandedChanged() {
 			if (expanded) {
 				listView.focus = true
 				listView.currentIndex = listView.count - 1

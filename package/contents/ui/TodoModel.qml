@@ -1,6 +1,6 @@
-import QtQuick 2.0
+import QtQuick
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.plasmoid
 
 ListModel {
 	id: todoModel
@@ -50,7 +50,7 @@ ListModel {
 			var todoItem = get(i)
 			var wasVisible = todoItem.isVisible
 			var incomplete = todoItem.status == 'needsAction'
-			var shouldBeVisible = plasmoid.configuration.showCompletedItems || incomplete
+			var shouldBeVisible = Plasmoid.configuration.showCompletedItems || incomplete
 			var isPlaceholder = !todoItem.title
 			if (incomplete && !isPlaceholder) {
 				incompleteCount += 1

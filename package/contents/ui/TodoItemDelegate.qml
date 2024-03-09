@@ -1,9 +1,12 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.3 as QQC2
-import QtQuick.Layouts 1.1
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.draganddrop 2.0 as DragAndDrop
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.draganddrop as DragAndDrop
+import org.kde.ksvg as KSvg
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
 
 MouseArea {
 	id: todoItemDelegate
@@ -53,7 +56,7 @@ MouseArea {
 		z: -1
 		// anchors.margins: 10
 
-		onEntered: {
+		onEntered: (drag) => {
 			if (drag.source.dragItemModel) {
 				if (todoModel == drag.source.dragItemModel) {
 					todoModel.move(drag.source.dragItemIndex, index, 1)
@@ -108,20 +111,20 @@ MouseArea {
 				delegate: todoItemRow
 			}
 
-			PlasmaCore.FrameSvgItem {
+			KSvg.FrameSvgItem {
 				visible: todoItemDelegate.containsMouse && !dropArea.containsDrag
 				anchors.horizontalCenter: parent.horizontalCenter
 				anchors.top: parent.top
 				anchors.bottom: parent.bottom
 				width: parent.width / 2
-				imagePath: plasmoid.file("", "images/dragarea.svg")
+				imagePath: "../images/dragarea.svg"
 			}
 		}
 
-		PlasmaComponents3.CheckBox {
+		PlasmaComponents.CheckBox {
 			id: checkbox
 			Layout.alignment: Qt.AlignTop
-			property int size: 30 * units.devicePixelRatio
+			property int size: 30
 			Layout.minimumWidth: size
 			Layout.minimumHeight: size
 			checked: todoItemDelegate.isCompleted
@@ -129,7 +132,7 @@ MouseArea {
 			onClicked: setComplete(checked)
 		}
 
-		PlasmaComponents3.TextArea {
+		PlasmaComponents.TextArea {
 			id: textArea
 			Layout.fillWidth: true
 			Layout.alignment: Qt.AlignTop
@@ -205,7 +208,7 @@ MouseArea {
 					return '<a href="' + m + '">' + m + '</a>' + ' ' // Extra space to prevent styling entire text as a link when ending with a link.
 				})
 				// Define before anchor tags.
-				out = '<style>a { color: ' + theme.highlightColor + '; }</style>' + out
+				out = '<style>a { color: ' + Kirigami.Theme.highlightColor + '; }</style>' + out
 
 				// Render new lines
 				out = out.replace(/\n/g, '<br>')
@@ -213,12 +216,12 @@ MouseArea {
 				return out
 			}
 
-			font.strikeout: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.strikeoutCompleted
+			font.strikeout: !isEditing && todoItemDelegate.isCompleted && Plasmoid.configuration.strikeoutCompleted
 
-			readonly property bool shouldFade: !isEditing && todoItemDelegate.isCompleted && plasmoid.configuration.fadeCompleted
+			readonly property bool shouldFade: !isEditing && todoItemDelegate.isCompleted && Plasmoid.configuration.fadeCompleted
 			opacity: shouldFade ? 0.6 : 1
 
-			Keys.onPressed: {
+			Keys.onPressed: (event) => {
 				if (event.key == Qt.Key_Tab) {
 					setIndent(model.indent + 1)
 					event.accepted = true
@@ -252,10 +255,10 @@ MouseArea {
 			}
 		}
 
-		PlasmaComponents3.ToolButton {
+		PlasmaComponents.ToolButton {
 			id: removeButton
 			Layout.alignment: Qt.AlignTop
-			visible: !plasmoid.configuration.deleteOnComplete
+			visible: !Plasmoid.configuration.deleteOnComplete
 			Layout.preferredWidth: checkbox.implicitHeight
 			Layout.preferredHeight: checkbox.implicitHeight
 			icon.name: 'trash-empty'

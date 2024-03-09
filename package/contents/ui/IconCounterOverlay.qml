@@ -20,17 +20,19 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  ***************************************************************************/
 
-import QtQuick 2.4
+import QtQuick
 
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasmoid
 
 Item {
 	id: overlay
 	readonly property int iconWidthDelta: (icon.width - icon.paintedWidth) / 2
 	property alias text: badgeLabel.text
-	property color backgroundColor: plasmoid.configuration.roundCounter ? theme.highlightColor : theme.backgroundColor
-	property color textColor: plasmoid.configuration.roundCounter ? theme.backgroundColor : theme.highlightColor
-	property real heightRatio: plasmoid.configuration.bigCounter ? 1.0 : 0.4
+	property color backgroundColor: Plasmoid.configuration.roundCounter ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
+	property color textColor: Plasmoid.configuration.roundCounter ? Kirigami.Theme.backgroundColor : Kirigami.Theme.highlightColor
+	property real heightRatio: Plasmoid.configuration.bigCounter ? 1.0 : 0.4
 
 	Item {
 		id: badgeMask
@@ -42,7 +44,7 @@ Item {
 			y: -offset
 			width: badgeRect.width + offset * 2
 			height: badgeRect.height + offset * 2
-			radius: plasmoid.configuration.roundCounter ? width : 0
+			radius: Plasmoid.configuration.roundCounter ? width : 0
 		}
 	}
 
@@ -80,9 +82,9 @@ Item {
 		width: height
 		height: Math.round(parent.height * overlay.heightRatio)
 		color: overlay.backgroundColor
-		radius: plasmoid.configuration.roundCounter ? width : 0
+		radius: Plasmoid.configuration.roundCounter ? width : 0
 
-		PlasmaComponents3.Label {
+		PlasmaComponents.Label {
 			id: badgeLabel
 			anchors.centerIn: parent
 			width: height

@@ -1,8 +1,9 @@
 // Version 5
 
-import QtQuick 2.0
-import QtQuick.Controls 1.0
-import QtQuick.Layouts 1.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import org.kde.plasma.plasmoid
 
 /*
 ** Example:
@@ -33,7 +34,7 @@ RowLayout {
 	property string configKey: ''
 	readonly property var currentItem: comboBox.model[comboBox.currentIndex]
 	readonly property string value: currentItem ? currentItem[valueRole] : ""
-	readonly property string configValue: configKey ? plasmoid.configuration[configKey] : ""
+	readonly property string configValue: configKey ? Plasmoid.configuration[configKey] : ""
 	onConfigValueChanged: {
 		if (!comboBox.focus && value != configValue) {
 			selectValue(configValue)
@@ -74,7 +75,7 @@ RowLayout {
 				if (typeof item !== "undefined") {
 					var val = item[valueRole]
 					if (configKey && (typeof val !== "undefined") && populated) {
-						plasmoid.configuration[configKey] = val
+						Plasmoid.configuration[configKey] = val
 					}
 				}
 			}

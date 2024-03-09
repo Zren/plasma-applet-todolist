@@ -1,25 +1,26 @@
-import QtQuick 2.0
-import QtQuick.Layouts 1.1
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
+import QtQuick
+import QtQuick.Layouts
 
-Item {
+import org.kde.plasma.plasmoid
+import org.kde.plasma.core as PlasmaCore
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasma5support as Plasma5Support
+
+PlasmoidItem {
 	id: main
 
 	NoteItem {
 		id: noteItem
 	}
 
-	Plasmoid.icon: plasmoid.configuration.icon
-
-	Plasmoid.compactRepresentation: MouseArea {
-		readonly property bool inPanel: (plasmoid.location == PlasmaCore.Types.TopEdge
-			|| plasmoid.location == PlasmaCore.Types.RightEdge
-			|| plasmoid.location == PlasmaCore.Types.BottomEdge
-			|| plasmoid.location == PlasmaCore.Types.LeftEdge)
+	compactRepresentation: MouseArea {
+		readonly property bool inPanel: (Plasmoid.location == PlasmaCore.Types.TopEdge
+			|| Plasmoid.location == PlasmaCore.Types.RightEdge
+			|| Plasmoid.location == PlasmaCore.Types.BottomEdge
+			|| Plasmoid.location == PlasmaCore.Types.LeftEdge)
 
 		Layout.minimumWidth: {
-			switch (plasmoid.formFactor) {
+			switch (Plasmoid.formFactor) {
 			case PlasmaCore.Types.Vertical:
 				return 0
 			case PlasmaCore.Types.Horizontal:
@@ -30,7 +31,7 @@ Item {
 		}
 
 		Layout.minimumHeight: {
-			switch (plasmoid.formFactor) {
+			switch (Plasmoid.formFactor) {
 			case PlasmaCore.Types.Vertical:
 				return width
 			case PlasmaCore.Types.Horizontal:
@@ -40,36 +41,36 @@ Item {
 			}
 		}
 
-		Layout.maximumWidth: inPanel ? units.iconSizeHints.panel : -1
-		Layout.maximumHeight: inPanel ? units.iconSizeHints.panel : -1
+		Layout.maximumWidth: inPanel ? Kirigami.Units.iconSizeHints.panel : -1
+		Layout.maximumHeight: inPanel ? Kirigami.Units.iconSizeHints.panel : -1
 
-		PlasmaCore.IconItem {
+		Kirigami.Icon {
 			id: icon
 			anchors.fill: parent
-			source: plasmoid.icon
+			source: Plasmoid.icon
 		}
 
 		IconCounterOverlay {
 			anchors.fill: parent
 			text: noteItem.hasIncomplete ? noteItem.incompleteCount : "✓"
 			visible: {
-				if (plasmoid.configuration.showCounter == 'Never') {
+				if (Plasmoid.configuration.showCounter == 'Never') {
 					return false
-				} else if (plasmoid.configuration.showCounter == 'Incomplete') {
+				} else if (Plasmoid.configuration.showCounter == 'Incomplete') {
 					return noteItem.hasIncomplete
 				} else { // 'Always'
 					return true
 				}
 			}
-			heightRatio: plasmoid.configuration.bigCounter ? 1 : 0.5
+			heightRatio: Plasmoid.configuration.bigCounter ? 1 : 0.5
 		}
 
-		onClicked: plasmoid.expanded = !plasmoid.expanded
+		onClicked: Plasmoid.expanded = !Plasmoid.expanded
 	}
 
-	Plasmoid.fullRepresentation: FullRepresentation {
-		Plasmoid.backgroundHints: isDesktopContainment && !plasmoid.configuration.showBackground ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
-		isDesktopContainment: plasmoid.location == PlasmaCore.Types.Floating
+	fullRepresentation: FullRepresentation {
+		Plasmoid.backgroundHints: isDesktopContainment && !Plasmoid.configuration.showBackground ? PlasmaCore.Types.NoBackground : PlasmaCore.Types.DefaultBackground
+		isDesktopContainment: Plasmoid.location == PlasmaCore.Types.Floating
 
 		// Connections {
 		// 	target: plasmoid
@@ -82,7 +83,7 @@ Item {
 	}
 
 
-	PlasmaCore.DataSource {
+	Plasma5Support.DataSource {
 		id: executable
 		engine: "executable"
 		connectedSources: []
@@ -93,7 +94,7 @@ Item {
 	}
 
 	function action_openInTextEditor() {
-		exec("xdg-open ~/.local/share/plasma_notes/" + plasmoid.configuration.noteId)
+		exec("xdg-open ~/.local/share/plasma_notes/" + Plasmoid.configuration.noteId)
 	}
 
 	function action_addSection() {
@@ -101,11 +102,11 @@ Item {
 	}
 
 	function action_toggleDeleteOnComplete() {
-		plasmoid.configuration.deleteOnComplete = !plasmoid.configuration.deleteOnComplete
+		plasmoid.configuration.deleteOnComplete = !Plasmoid.configuration.deleteOnComplete
 	}
 
 	function action_toggleHidden() {
-		plasmoid.configuration.hidden = !plasmoid.configuration.hidden
+		plasmoid.configuration.hidden = !Plasmoid.configuration.hidden
 	}
 
 
@@ -114,30 +115,52 @@ Item {
 		// Because it's false, that means that when we try to unset the icon,
 		// it ignores assigning the icon since it thinks we haven't set the function argument.
 		// "NOICON" is not a FreeDesktop naming standard, but it probably has no image.
-		plasmoid.setAction(actionName, plasmoid.action(actionName).text, value ? "checkmark" : "NOICON")
+		plasmoid.setAction(actionName, Plasmoid.action(actionName).text, value ? "checkmark" : "NOICON")
 	}
 
 	function updateContextMenu() {
-		updateContextMenuCheckmark("toggleDeleteOnComplete", plasmoid.configuration.deleteOnComplete)
-		updateContextMenuCheckmark("toggleHidden", plasmoid.configuration.hidden)
-		if (plasmoid.location != PlasmaCore.Types.Floating) {
+		updateContextMenuCheckmark("toggleDeleteOnComplete", Plasmoid.configuration.deleteOnComplete)
+		updateContextMenuCheckmark("toggleHidden", Plasmoid.configuration.hidden)
+		if (Plasmoid.location != PlasmaCore.Types.Floating) {
 			// not desktop component
-			plasmoid.action("toggleHidden").visible = false
+			Plasmoid.action("toggleHidden").visible = false
 		}
 	}
 
 	Connections {
-		target: plasmoid.configuration
-		onDeleteOnCompleteChanged: updateContextMenu()
-		onHiddenChanged: updateContextMenu()
+		target: Plasmoid.configuration
+		function onDeleteOnCompleteChanged() {
+			updateContextMenu()
+		}
+		function onHiddenChanged() {
+			updateContextMenu()
+		}
 	}
 
-	Component.onCompleted: {
-		plasmoid.setAction("openInTextEditor", i18n("Open in Text Editor"), "accessories-text-editor")
-		plasmoid.setAction("addSection", i18n("Add List"), "list-add")
-		plasmoid.setAction("toggleDeleteOnComplete", i18n("Delete on Complete"), "checkmark")
-		plasmoid.setAction("toggleHidden", i18n("Hide"), "checkmark")
-		// plasmoid.setAction("deleteCompleted", i18n("Delete All Completed"), "trash-empty")
-		updateContextMenu()
-	}
+	Plasmoid.contextualActions: [
+		PlasmaCore.Action {
+			text: i18n("Open in Text Editor")
+			icon.name: "accessories-text-editor"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_openInTextEditor()
+		},
+		PlasmaCore.Action {
+			text: i18n("Add to List")
+			icon.name: "list-add"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_addSection()
+		},
+		PlasmaCore.Action {
+			text: i18n("Delete on Complete")
+			icon.name: "checkmark"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_toggleDeleteOnComplete()
+		},
+		PlasmaCore.Action {
+			text: i18n("Hide")
+			icon.name: "checkmark"
+			priority: Plasmoid.LowPriorityAction
+			onTriggered: action_openInTextEditor()
+		}
+	]
 }

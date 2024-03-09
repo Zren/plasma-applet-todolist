@@ -1,14 +1,13 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.5
-import QtQuick.Dialogs 1.2 // MessageDialog
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Dialogs // MessageDialog
+import QtQuick.Layouts
 
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import QtQuick.Controls.Styles.Plasma 2.0 as PlasmaStyles
-
-import org.kde.draganddrop 2.0 as DragAndDrop
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.draganddrop as DragAndDrop
+import org.kde.ksvg as KSvg
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
 
 ColumnLayout {
 	id: container
@@ -58,21 +57,21 @@ ColumnLayout {
 			DragAndDrop.DragArea {
 				id: dragArea
 				Layout.fillHeight: true
-				Layout.preferredWidth: 30 * units.devicePixelRatio // Same width as drag area in todoItem
+				Layout.preferredWidth: 30 // Same width as drag area in todoItem
 
 				delegate: labelRow
 
-				PlasmaCore.FrameSvgItem {
+				KSvg.FrameSvgItem {
 					visible: labelMouseArea.containsMouse && !noteSectionDropArea.containsDrag
 					anchors.horizontalCenter: parent.horizontalCenter
 					anchors.top: parent.top
 					anchors.bottom: parent.bottom
 					width: parent.width / 2
-					imagePath: plasmoid.file("", "images/dragarea.svg")
+					imagePath: "../images/dragarea.svg"
 				}
 			}
 
-			PlasmaComponents3.TextField {
+			PlasmaComponents.TextField {
 				id: textField
 				Layout.fillWidth: true
 				text: noteSection.label
@@ -84,7 +83,7 @@ ColumnLayout {
 				background: Item {}
 				font.pointSize: -1
 				font.pixelSize: pinButton.height
-				font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+				font.weight: Plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
 				implicitHeight: contentHeight
 				padding: 0
 				leftPadding: 0
@@ -99,24 +98,24 @@ ColumnLayout {
 					text = Qt.binding(function() { return noteSection.label })
 				}
 
-				PlasmaComponents3.Label {
+				PlasmaComponents.Label {
 					id: textOutline
 					anchors.fill: parent
-					visible: !textField.usingPlasmaStyle && plasmoid.configuration.listTitleOutline
+					visible: !textField.usingPlasmaStyle && Plasmoid.configuration.listTitleOutline
 					text: parent.text
 					font.pointSize: -1
 					font.pixelSize: pinButton.height
-					font.weight: plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
+					font.weight: Plasmoid.configuration.listTitleBold ? Font.Bold : Font.Normal
 					color: "transparent"
 					style: Text.Outline
-					styleColor: theme.backgroundColor
+					styleColor: Kirigami.Theme.backgroundColor
 					verticalAlignment: Text.AlignVCenter
 				}
 
 			}
 		}
 
-		PlasmaComponents3.ToolButton {
+		PlasmaComponents.ToolButton {
 			anchors.right: labelRow.right
 			readonly property bool isRightMostSection: index == notesRepeater.count-1
 			anchors.rightMargin: isRightMostSection && pinButton.visible ? pinButton.width : 0
@@ -141,11 +140,9 @@ ColumnLayout {
 					MessageDialog {
 						// visible: true
 						title: i18n("Delete List")
-						icon: StandardIcon.Warning
 						text: i18n("Are you sure you want to delete the list \"%1\" with %2 items?", noteSection.label || ' ', Math.max(0, noteSection.model.count - 1))
-						standardButtons: StandardButton.Yes | StandardButton.Cancel
 
-						onYes: noteItem.removeSection(index)
+						onAccepted: noteItem.removeSection(index)
 						Component.onCompleted: visible = true
 					}
 				}
@@ -154,7 +151,7 @@ ColumnLayout {
 		}
 	}
 
-	PlasmaExtras.ScrollArea {
+	ScrollView {
 		Layout.fillWidth: true
 		Layout.fillHeight: true
 

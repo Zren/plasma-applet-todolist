@@ -4,8 +4,8 @@
 # This script detects if the widget is already installed.
 # If it is, it will use --upgrade instead and restart plasmashell.
 
-packageNamespace=`kreadconfig5 --file="$PWD/package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name"`
-packageServiceType=`kreadconfig5 --file="$PWD/package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-ServiceTypes"`
+packageNamespace=`kreadconfig6 --file="$PWD/package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name"`
+packageServiceType=`kreadconfig6 --file="$PWD/package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-ServiceTypes"`
 restartPlasmashell=false
 
 for arg in "$@"; do
@@ -17,7 +17,7 @@ for arg in "$@"; do
 done
 
 isAlreadyInstalled=false
-kpackagetool5 --type="${packageServiceType}" --show="$packageNamespace" &> /dev/null
+kpackagetool6 --type="${packageServiceType}" --show="$packageNamespace" &> /dev/null
 if [ $? == 0 ]; then
 	isAlreadyInstalled=true
 fi
@@ -33,15 +33,15 @@ if command -v desktoptojson &> /dev/null ; then
 fi
 
 if $isAlreadyInstalled; then
-	# Eg: kpackagetool5 -t "Plasma/Applet" -u package
-	kpackagetool5 -t "${packageServiceType}" -u package
+	# Eg: kpackagetool6 -t "Plasma/Applet" -u package
+	kpackagetool6 -t "${packageServiceType}" -u package
 	restartPlasmashell=true
 else
-	# Eg: kpackagetool5 -t "Plasma/Applet" -i package
-	kpackagetool5 -t "${packageServiceType}" -i package
+	# Eg: kpackagetool6 -t "Plasma/Applet" -i package
+	kpackagetool6 -t "${packageServiceType}" -i package
 fi
 
 if $restartPlasmashell; then
 	killall plasmashell
-	kstart5 plasmashell
+	kstart plasmashell
 fi
